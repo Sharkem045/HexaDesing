@@ -15,8 +15,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
             box-sizing: border-box;
-            background-color: white; /* Fondo blanco */
-            color: black; /* Texto negro */
+            background-color: white;
+            color: black;
         }
 
         /* Estilo para la portada principal */
@@ -31,12 +31,11 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
             background-color: rgba(0, 0, 0, 0.5);
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -46,9 +45,10 @@
         .hero p {
             font-size: 1.2em;
             margin-bottom: 40px;
+            color: white;
         }
 
-        /* Menú en la parte superior */
+        /* Menú de navegación */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -71,7 +71,43 @@
 
         .navbar a:hover {
             background-color: black;
+        }
+
+        /* Estilos del menú de hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: #222;
+            width: 200px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .mobile-nav a {
+            padding: 10px;
+            border-bottom: 1px solid white;
             color: white;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
         }
 
         /* Secciones */
@@ -142,36 +178,6 @@
             line-height: 1.5;
         }
 
-        /* Acerca de nosotros */
-        .about-section {
-            margin-top: 50px;
-            padding: 20px;
-        }
-
-        .about-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .about-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .about-item img {
-            width: 100%;
-        }
-
-        .about-item div {
-            padding: 20px;
-            text-align: left;
-        }
-
         /* Formulario de contacto */
         form {
             display: flex;
@@ -213,20 +219,27 @@
         /* Responsividad */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 2em;
             }
 
             .hero p {
-                font-size: 1em;
-            }
-
-            .navbar a {
-                padding: 6px 10px;
                 font-size: 0.9em;
             }
 
+            .navbar a {
+                display: none; /* Ocultar enlaces de la barra en móvil */
+            }
+
+            .hamburger {
+                display: flex; /* Mostrar menú de hamburguesa en móvil */
+            }
+
+            .mobile-nav.active {
+                display: flex;
+            }
+
             .section-title {
-                font-size: 1.8em;
+                font-size: 1.5em;
             }
 
             .service-item h3 {
@@ -244,7 +257,12 @@
 <!-- Menú de navegación -->
 <div class="navbar">
     <a href="#" onclick="showSection('hero')">HexaDesign</a>
-    <div>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
         <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
@@ -286,35 +304,6 @@
     </div>
 </div>
 
-<!-- Nueva sección sobre la empresa -->
-<div class="about-section">
-    <h2 class="section-title">Acerca de Nosotros</h2>
-
-    <div class="about-item">
-        <img src="https://github.com/user-attachments/assets/582d670d-8866-4ef9-8a31-478f863e27c7" alt="Dedicados">
-        <div>
-            <h3>Dedicados</h3>
-            <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes.</p>
-        </div>
-    </div>
-
-    <div class="about-item">
-        <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Bajo Costo">
-        <div>
-            <h3>Bajo Costo</h3>
-            <p>Nuestro compromiso es ofrecer piezas y modelos de alta calidad a precios competitivos.</p>
-        </div>
-    </div>
-
-    <div class="about-item">
-        <img src="https://github.com/user-attachments/assets/2acba281-8e3c-4e4f-b706-0b4c9f647ff4" alt="Flexibilidad">
-        <div>
-            <h3>Flexibilidad</h3>
-            <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente.</p>
-        </div>
-    </div>
-</div>
-
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
     <h2 class="section-title">Contacto</h2>
@@ -338,6 +327,17 @@
             section.classList.remove('active');
         });
         document.getElementById(sectionId).classList.add('active');
+        closeMobileMenu(); // Cierra el menú móvil después de hacer clic
+    }
+
+    function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobile-nav');
+        mobileNav.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+        const mobileNav = document.getElementById('mobile-nav');
+        mobileNav.classList.remove('active');
     }
 </script>
 </body>
