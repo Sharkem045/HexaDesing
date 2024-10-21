@@ -12,11 +12,11 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             overflow-x: hidden;
             box-sizing: border-box;
-            background-color: white;
-            color: black;
+            background-color: #f0f0f0; /* Fondo gris claro */
+            color: #333; /* Texto gris oscuro */
         }
 
         /* Estilo para la portada principal */
@@ -32,20 +32,22 @@
             justify-content: center;
             text-align: center;
             color: white;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro más opaco */
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: gray;
+            letter-spacing: 3px;
+            color: #e0e0e0; /* Color gris claro */
         }
 
         .hero p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 80%;
+            color: #d0d0d0;
         }
 
         /* Menú en la parte superior */
@@ -53,25 +55,26 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #222;
-            padding: 10px 20px;
+            background-color: #444; /* Fondo gris oscuro */
+            padding: 15px 25px;
             position: relative;
             z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 12px;
             font-size: 1em;
-            padding: 8px 15px;
+            padding: 10px 20px;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: black;
-            color: white;
+            background-color: #666; /* Gris medio al pasar el ratón */
+            color: #fff;
         }
 
         /* Menú de hamburguesa */
@@ -82,10 +85,11 @@
         }
 
         .hamburger div {
-            width: 25px;
-            height: 3px;
+            width: 30px;
+            height: 4px;
             background-color: white;
-            margin: 4px 0;
+            margin: 5px 0;
+            border-radius: 2px;
         }
 
         .navbar-menu {
@@ -97,18 +101,19 @@
             .navbar-menu {
                 display: none;
                 flex-direction: column;
-                background-color: #222;
+                background-color: #444;
                 position: absolute;
-                top: 50px;
+                top: 60px;
                 right: 0;
-                width: 200px;
+                width: 220px;
                 border-radius: 0 0 5px 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
 
             .navbar-menu a {
                 padding: 15px;
                 text-align: center;
-                border-bottom: 1px solid #444;
+                border-bottom: 1px solid #555;
             }
 
             .navbar-menu a:last-child {
@@ -124,7 +129,7 @@
             }
 
             .hero h1 {
-                font-size: 2.5em;
+                font-size: 2em;
             }
 
             .hero p {
@@ -137,14 +142,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-            padding: 50px 20px;
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #fff; /* Fondo blanco */
         }
 
         .info-box {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: #fafafa;
+            padding: 25px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -153,29 +159,31 @@
         }
 
         .info-box:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .info-box h3 {
-            font-size: 1.5em;
+            font-size: 1.6em;
             margin-bottom: 10px;
-            color: black;
+            color: #444;
         }
 
         .info-box p {
             font-size: 1em;
-            color: #555;
+            color: #666;
             line-height: 1.5;
         }
 
         @media (max-width: 768px) {
             .info-section {
                 flex-direction: column;
+                padding: 20px 10px;
             }
 
             .info-box {
-                max-width: 80%;
+                max-width: 90%;
+                margin-bottom: 20px;
             }
         }
 
@@ -184,6 +192,7 @@
             display: none;
             padding: 50px 20px;
             text-align: center;
+            background-color: #fafafa; /* Fondo gris claro */
         }
 
         .active {
@@ -191,8 +200,8 @@
         }
 
         .section-title {
-            font-size: 2.5em;
-            color: black;
+            font-size: 2.3em;
+            color: #333;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -218,11 +227,11 @@
             transform: scale(1.05);
         }
 
-        /* Sección de servicios con tres columnas */
+        /* Sección de servicios */
         .services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 25px;
             margin-top: 30px;
         }
 
@@ -239,15 +248,15 @@
         }
 
         .service-item h3 {
-            font-size: 1.5em;
-            color: black;
+            font-size: 1.4em;
+            color: #333;
             margin-bottom: 10px;
         }
 
         .service-item p {
-            font-size: 1em;
+            font-size: 0.95em;
             color: #555;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         @media (max-width: 1200px) {
@@ -283,28 +292,28 @@
 <!-- Portada Principal -->
 <div class="hero">
     <h1>HexaDesign</h1>
-    <p>Explora nuestros servicios y proyectos de diseño</p>
+    <p>Descubre nuestras soluciones creativas y proyectos innovadores en diseño industrial.</p>
 </div>
 
 <!-- Sección de Información destacada -->
 <div class="info-section">
     <div class="info-box">
-        <h3>Dedicados</h3>
-        <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes.</p>
+        <h3>Compromiso</h3>
+        <p>En HexaDesign, estamos comprometidos con la calidad y la satisfacción del cliente.</p>
     </div>
     <div class="info-box">
-        <h3>Bajo Costo</h3>
-        <p>Ofrecemos piezas y modelos de alta calidad a precios competitivos para optimizar costos sin sacrificar calidad.</p>
+        <h3>Accesibilidad</h3>
+        <p>Ofrecemos soluciones accesibles para proyectos de diseño de cualquier escala.</p>
     </div>
     <div class="info-box">
-        <h3>Flexibilidad</h3>
-        <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente para ajustarnos a sus requerimientos.</p>
+        <h3>Adaptabilidad</h3>
+        <p>Nuestro equipo se adapta a tus necesidades específicas para lograr resultados óptimos.</p>
     </div>
 </div>
 
 <!-- Sección de Proyectos -->
 <div id="proyectos" class="section">
-    <h2 class="section-title">Nuestros Proyectos</h2>
+    <h2 class="section-title">Proyectos Destacados</h2>
     <div class="gallery">
         <img src="https://via.placeholder.com/300" alt="Proyecto 1">
         <img src="https://via.placeholder.com/300" alt="Proyecto 2">
@@ -314,26 +323,26 @@
 
 <!-- Sección de Servicios -->
 <div id="servicios" class="section">
-    <h2 class="section-title">Servicios</h2>
+    <h2 class="section-title">Nuestros Servicios</h2>
     <div class="services">
         <div class="service-item">
-            <h3>Diseño</h3>
-            <p>Ofrecemos un servicio de diseño personalizado adaptado a tus necesidades.</p>
+            <h3>Diseño Personalizado</h3>
+            <p>Creamos diseños únicos y adaptados a tus necesidades específicas.</p>
         </div>
         <div class="service-item">
-            <h3>Prototipado Rápido</h3>
-            <p>Prototipado rápido para validar tus ideas en poco tiempo.</p>
+            <h3>Prototipado Eficiente</h3>
+            <p>Ofrecemos prototipado rápido para validar tus ideas de manera eficaz.</p>
         </div>
         <div class="service-item">
-            <h3>Consultoría</h3>
-            <p>Asesoría especializada en procesos de diseño y fabricación.</p>
+            <h3>Consultoría Integral</h3>
+            <p>Asesoría completa en procesos de diseño y fabricación para optimizar tu proyecto.</p>
         </div>
     </div>
 </div>
 
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
-    <h2 class="section-title">Contacto</h2>
+    <h2 class="section-title">Contáctanos</h2>
     <form>
         <input type="text" placeholder="Nombre" required><br>
         <input type="email" placeholder="Email" required><br>
@@ -363,4 +372,5 @@
 </script>
 </body>
 </html>
+
 
