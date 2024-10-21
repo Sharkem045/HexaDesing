@@ -5,228 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Diseño y Prototipado">
     <title>HexaDesign</title>
-    <!-- Fuentes y Estilos -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Globales */
+        /* Estilos globales */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             font-family: 'Montserrat', sans-serif;
-            background-color: #f8f9fa;
+            background-color: white;
+            color: black;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            color: #333;
         }
 
+        /* Menú de navegación */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: black;
+            color: white;
             padding: 15px 30px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s;
-        }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-            font-weight: 500;
-            padding: 10px 15px;
-            transition: background-color 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-        }
-
-        .navbar.scrolled {
-            background-color: #333;
         }
 
         .navbar .brand {
             font-size: 1.8em;
-            font-weight: 700;
-            color: #ff6f61;
+            font-weight: bold;
+            color: white;
         }
 
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ccc;
+        }
+
+        /* Menú hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: black;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .mobile-menu a {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Portada principal */
         .hero {
+            background-image: url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
             height: 100vh;
-            background-image: url('https://via.placeholder.com/1920x1080');
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: white;
             text-align: center;
-            color: #fff;
-            padding: 0 20px;
         }
 
         .hero h1 {
             font-size: 4em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .hero p {
             font-size: 1.5em;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.5;
             margin-bottom: 30px;
         }
 
         .hero button {
-            margin-top: 20px;
             padding: 15px 40px;
-            background-color: #ff6f61;
-            border: none;
-            color: #fff;
+            background-color: white;
+            color: black;
             font-size: 1.2em;
+            border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
-            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .hero button:hover {
-            background-color: #ff3e2f;
+            background-color: black;
+            color: white;
         }
 
+        /* Secciones */
         .section {
             padding: 100px 20px;
             text-align: center;
-            background-color: #fff;
-            color: #333;
+            background-color: white;
+            color: black;
         }
 
         .section h2 {
-            font-size: 2.8em;
+            font-size: 2.5em;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        .section p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .video-section {
-            position: relative;
-            height: 70vh;
-            overflow: hidden;
-        }
-
-        .video-section video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+        /* Galería */
+        .gallery {
             display: flex;
             justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .video-overlay h2 {
-            font-size: 3em;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .services-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 100px 20px;
-            background-color: #f0f0f0;
-        }
-
-        .service-box {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .service-box h3 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #ff6f61;
-        }
-
-        .gallery-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
             gap: 20px;
-            padding: 100px 20px;
-            background-color: #fff;
+            flex-wrap: wrap;
         }
 
-        .gallery-section img {
+        .gallery img {
             width: 300px;
             height: auto;
             border-radius: 10px;
             transition: transform 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .gallery-section img:hover {
+        .gallery img:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .contact-section {
+        /* Sección de servicios */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-item {
             background-color: #f0f0f0;
-            padding: 100px 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Sección Acerca de */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-item {
+            display: flex;
+            gap: 20px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+
+        .about-item img {
+            width: 40%;
+            border-radius: 10px;
+        }
+
+        .about-item div {
+            width: 60%;
+            text-align: left;
+        }
+
+        /* Sección de contacto */
+        .contact-section {
+            padding: 50px;
+            background-color: #f0f0f0;
         }
 
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 40px;
+            padding: 20px;
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
@@ -235,140 +234,167 @@
         .contact-form button {
             width: 100%;
             padding: 15px;
-            background-color: #ff6f61;
-            border: none;
-            color: #fff;
+            background-color: black;
+            color: white;
             font-size: 1.2em;
+            border: none;
             cursor: pointer;
-            border-radius: 5px;
         }
 
-        .contact-form button:hover {
-            background-color: #ff3e2f;
-        }
-
-        .footer {
-            background-color: #222;
-            color: #fff;
-            padding: 50px 20px;
+        /* Pie de página */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
             text-align: center;
         }
 
-        .footer p {
-            font-size: 1.1em;
-        }
-
-        /* Estilos Responsivos */
-        @media (max-width: 1200px) {
-            .services-section {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        /* Responsividad */
         @media (max-width: 768px) {
-            .navbar {
-                padding: 10px 20px;
+            .navbar .nav-links {
+                display: none;
             }
 
-            .hero h1 {
-                font-size: 3em;
+            .hamburger {
+                display: flex;
             }
 
-            .hero p {
-                font-size: 1em;
-            }
-
-            .services-section {
+            .services {
                 grid-template-columns: 1fr;
             }
 
-            .gallery-section img {
-                width: 90%;
+            .about-item {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-item img, .about-item div {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- Menú de Navegación -->
+<!-- Menú de navegación -->
 <nav class="navbar">
     <div class="brand">HexaDesign</div>
     <div class="nav-links">
-        <a href="#about">Sobre Nosotros</a>
-        <a href="#services">Servicios</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#contact">Contacto</a>
+        <a href="#hero">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#about">Acerca</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" onclick="toggleMenu()">Inicio</a>
+        <a href="#proyectos" onclick="toggleMenu()">Proyectos</a>
+        <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+        <a href="#about" onclick="toggleMenu()">Acerca</a>
+        <a href="#contacto" onclick="toggleMenu()">Contacto</a>
     </div>
 </nav>
 
-<!-- Sección Hero -->
-<div class="hero">
-    <h1>Diseñamos el Futuro</h1>
-    <p>En HexaDesign, llevamos tus ideas más allá con diseños innovadores y prototipos de alta calidad.</p>
-    <button>Explora Nuestros Proyectos</button>
+<!-- Portada principal -->
+<div class="hero" id="hero">
+    <h1>HexaDesign</h1>
+    <p>Explora nuestros servicios y proyectos de diseño.</p>
+    <button onclick="location.href='#proyectos'">Ver Proyectos</button>
 </div>
 
-<!-- Sección de Video -->
-<div class="video-section">
-    <video autoplay muted loop>
-        <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay">
-        <h2>Transformando Ideas en Realidad</h2>
+<!-- Sección de proyectos -->
+<div class="section" id="proyectos">
+    <h2>Proyectos Recientes</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 3">
     </div>
 </div>
 
-<!-- Sección de Servicios -->
-<div id="services" class="services-section">
-    <div class="service-box">
-        <h3>Diseño Personalizado</h3>
-        <p>Creación de diseños únicos adaptados a tus necesidades específicas, garantizando la máxima satisfacción.</p>
-    </div>
-    <div class="service-box">
-        <h3>Prototipado Rápido</h3>
-        <p>Validación de ideas a través de prototipos eficientes y realistas, listos para pruebas y mejoras.</p>
-    </div>
-    <div class="service-box">
-        <h3>Consultoría Integral</h3>
-        <p>Asesoría experta en procesos de diseño y fabricación, optimizando cada paso del proyecto.</p>
+<!-- Sección de servicios -->
+<div class="section" id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
+        <div class="service-item">
+            <h3>Diseño Personalizado</h3>
+            <p>Creación de diseños adaptados a tus necesidades.</p>
+        </div>
+        <div class="service-item">
+            <h3>Prototipado Rápido</h3>
+            <p>Prototipos eficientes y funcionales para pruebas.</p>
+        </div>
+        <div class="service-item">
+            <h3>Consultoría Integral</h3>
+            <p>Asesoría en procesos de diseño y fabricación.</p>
+        </div>
     </div>
 </div>
 
-<!-- Galería de Proyectos -->
-<div id="projects" class="gallery-section">
-    <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-    <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-    <img src="https://via.placeholder.com/300" alt="Proyecto 3">
-    <img src="https://via.placeholder.com/300" alt="Proyecto 4">
+<!-- Sección acerca de -->
+<div class="section about-section" id="about">
+    <h2>Acerca de Nosotros</h2>
+    <div class="about-item">
+        <img src="https://github.com/user-attachments/assets/582d670d-8866-4ef9-8a31-478f863e27c7" alt="Dedicados">
+        <div>
+            <h3>Dedicados</h3>
+            <p>Proporcionamos soluciones de diseño adaptadas a las necesidades de nuestros clientes.</p>
+        </div>
+    </div>
+    <div class="about-item">
+        <div>
+            <h3>Bajo Costo</h3>
+            <p>Ofrecemos calidad a precios competitivos, optimizando costos sin sacrificar calidad.</p>
+        </div>
+        <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Bajo Costo">
+    </div>
+    <div class="about-item">
+        <img src="https://github.com/user-attachments/assets/2acba281-8e3c-4e4f-b706-0b4c9f647ff4" alt="Flexibilidad">
+        <div>
+            <h3>Flexibilidad</h3>
+            <p>Adaptamos nuestros servicios según los requerimientos del cliente.</p>
+        </div>
+    </div>
 </div>
 
-<!-- Sección de Contacto -->
-<div id="contact" class="contact-section">
+<!-- Sección de contacto -->
+<div class="contact-section" id="contacto">
+    <h2>Contacto</h2>
     <div class="contact-form">
-        <h2>Contáctanos</h2>
         <input type="text" placeholder="Nombre" required>
         <input type="email" placeholder="Email" required>
         <textarea placeholder="Mensaje" required></textarea>
-        <button>Enviar</button>
+        <button type="submit">Enviar</button>
     </div>
 </div>
 
-<!-- Pie de Página -->
-<footer class="footer">
+<!-- Pie de página -->
+<footer>
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
 <script>
-    // Cambiar color de la barra de navegación al hacer scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    }
 </script>
+
 </body>
 </html>
 
