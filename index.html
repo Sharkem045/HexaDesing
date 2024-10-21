@@ -73,21 +73,6 @@
             color: white; /* Texto blanco al pasar el ratón */
         }
 
-        /* Menú hamburguesa */
-        .menu-toggle {
-            display: none; /* Ocultar por defecto */
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .bar {
-            height: 4px;
-            width: 30px;
-            background-color: white;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
         /* Secciones ocultas al inicio */
         .section {
             display: none;
@@ -251,124 +236,113 @@
             .about-item div {
                 width: 50%; /* Ancho del 50% para móviles */
             }
-
-            .menu-toggle {
-                display: flex; /* Mostrar el menú hamburguesa en móviles */
-            }
-
-            .navbar div {
-                display: none; /* Ocultar enlaces en móviles por defecto */
-            }
-
-            .navbar.active div {
-                display: flex; /* Mostrar enlaces cuando el menú hamburguesa se activa */
-                flex-direction: column; /* Apilar verticalmente */
-                position: absolute;
-                background-color: #222; /* Fondo negro para el menú desplegable */
-                width: 100%; /* Ancho completo */
-                top: 60px; /* Posiciona debajo del menú */
-                left: 0; /* Alinear a la izquierda */
-                z-index: 10;
-            }
-
-            .navbar.active div a {
-                margin: 10px 0; /* Espacio entre enlaces en móviles */
-                padding: 10px; /* Espacio alrededor de cada enlace */
-            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <h1>HexaDesign</h1>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <div id="nav-links">
-            <a href="#" onclick="showSection('about')">Sobre Nosotros</a>
-            <a href="#" onclick="showSection('projects')">Proyectos</a>
-            <a href="#" onclick="showSection('services')">Servicios</a>
-            <a href="#" onclick="showSection('contact')">Contacto</a>
-        </div>
-    </div>
 
-    <div class="hero">
-        <h1>Bienvenido a HexaDesign</h1>
-        <p>Innovación y Prototipado de Diseño 3D</p>
+<!-- Menú de navegación -->
+<div class="navbar">
+    <a href="#" onclick="showSection('hero')">HexaDesign</a>
+    <div>
+        <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
+        <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </div>
+</div>
 
-    <div id="about" class="section active">
-        <h2 class="section-title">Sobre Nosotros</h2>
-        <div class="about-section">
-            <div class="about-item">
-                <img src="https://www.your-image-url.com/image1.jpg" alt="Descripción de la imagen">
-                <div>
-                    <h3>Visión</h3>
-                    <p>Nuestra visión es liderar el camino en el diseño innovador de piezas mecánicas...</p>
-                </div>
-            </div>
-            <div class="about-item">
-                <img src="https://www.your-image-url.com/image2.jpg" alt="Descripción de la imagen">
-                <div>
-                    <h3>Misión</h3>
-                    <p>Nos comprometemos a ofrecer soluciones de diseño personalizadas y eficientes...</p>
-                </div>
-            </div>
+<!-- Portada Principal -->
+<div class="hero">
+    <h1>HexaDesign</h1>
+    <p>Explora nuestros servicios y proyectos de diseño</p>
+</div>
+
+<!-- Sección de Proyectos -->
+<div id="proyectos" class="section">
+    <h2 class="section-title">Nuestros Proyectos</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 3">
+    </div>
+</div>
+
+<!-- Sección de Servicios -->
+<div id="servicios" class="section">
+    <h2 class="section-title">Servicios</h2>
+    <div class="services">
+        <div class="service-item">
+            <h3>Diseño</h3>
+            <p>Ofrecemos un servicio de diseño personalizado adaptado a tus necesidades.</p>
         </div>
-    </div>
-
-    <div id="projects" class="section">
-        <h2 class="section-title">Proyectos</h2>
-        <div class="gallery">
-            <img src="https://www.your-image-url.com/project1.jpg" alt="Proyecto 1">
-            <img src="https://www.your-image-url.com/project2.jpg" alt="Proyecto 2">
-            <img src="https://www.your-image-url.com/project3.jpg" alt="Proyecto 3">
+        <div class="service-item">
+            <h3>Prototipado Rápido</h3>
+            <p>Prototipado rápido para validar tus ideas en poco tiempo.</p>
+        </div>
+        <div class="service-item">
+            <h3>Consultoría</h3>
+            <p>Asesoría especializada en procesos de diseño y fabricación.</p>
         </div>
     </div>
+</div>
 
-    <div id="services" class="section">
-        <h2 class="section-title">Servicios</h2>
-        <div class="services">
-            <div class="service-item">
-                <h3>Diseño 3D</h3>
-                <p>Prototipado rápido y diseño personalizado de piezas mecánicas...</p>
-            </div>
-            <div class="service-item">
-                <h3>Consultoría</h3>
-                <p>Asesoría especializada en diseño y fabricación...</p>
-            </div>
-            <div class="service-item">
-                <h3>Integración de Sistemas</h3>
-                <p>Soluciones integrales para sistemas mecánicos y electrónicos...</p>
-            </div>
+<!-- Nueva sección sobre la empresa -->
+<div class="about-section">
+    <h2 class="section-title">Acerca de Nosotros</h2>
+
+    <!-- Primer bloque: Dedicados -->
+    <div class="about-item">
+        <img src="https://github.com/user-attachments/assets/582d670d-8866-4ef9-8a31-478f863e27c7" alt="Dedicados">
+        <div>
+            <h3>Dedicados</h3>
+            <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes. Nuestro equipo de expertos trabaja incansablemente para garantizar que cada proyecto sea un éxito.</p>
         </div>
     </div>
 
-    <div id="contact" class="section">
-        <h2 class="section-title">Contacto</h2>
-        <p>Para más información, contáctenos a través de nuestra <a href="mailto:info@hexadesign.com">email</a>.</p>
+    <!-- Segundo bloque: Bajo Costo -->
+    <div class="about-item">
+        <div>
+            <h3>Bajo Costo</h3>
+            <p>Nuestro compromizo con nuestros clientes es ofrecer piezas y modelos de alta calidad a precios competitivos. Creemos que un excelente diseño no debería romper el banco, y trabajamos para optimizar costos sin sacrificar calidad.</p>
+        </div>
+        <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Bajo Costo">
     </div>
 
-    <footer>
-        <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Tercer bloque: Flexibilidad -->
+    <div class="about-item">
+        <img src="https://github.com/user-attachments/assets/2acba281-8e3c-4e4f-b706-0b4c9f647ff4" alt="Flexibilidad">
+        <div>
+            <h3>Flexibilidad</h3>
+            <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente. Ya sea que necesites un diseño personalizado o un prototipo, estamos aquí para ajustar nuestros procesos a tus requerimientos.</p>
+        </div>
+    </div>
+</div>
 
-    <script>
-        function showSection(section) {
-            // Ocultar todas las secciones
-            document.querySelectorAll('.section').forEach((sec) => {
-                sec.classList.remove('active');
-            });
-            // Mostrar la sección seleccionada
-            document.getElementById(section).classList.add('active');
-        }
+<!-- Sección de Contacto -->
+<div id="contacto" class="section">
+    <h2 class="section-title">Contacto</h2>
+    <p>Si tienes preguntas o deseas más información, no dudes en contactarnos.</p>
+    <form>
+        <input type="text" placeholder="Nombre" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <textarea placeholder="Mensaje" required></textarea><br>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
 
-        function toggleMenu() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active'); // Activa o desactiva el menú
-        }
-    </script>
+<!-- Pie de página -->
+<footer>
+    <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active'); // Ocultar todas las secciones
+        });
+        document.getElementById(sectionId).classList.add('active'); // Mostrar la sección seleccionada
+    }
+</script>
 </body>
 </html>
