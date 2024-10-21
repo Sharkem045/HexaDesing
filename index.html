@@ -97,6 +97,7 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            padding: 20px;
         }
 
         .gallery img {
@@ -104,6 +105,7 @@
             border-radius: 10px;
             transition: transform 0.3s;
             width: 300px; /* Ancho fijo para imágenes en computadoras */
+            height: auto; /* Mantener la relación de aspecto */
         }
 
         .gallery img:hover {
@@ -231,26 +233,27 @@
     <div class="services">
         <div class="service-item">
             <h3>Diseño de Productos</h3>
-            <p>Diseñamos productos industriales innovadores y funcionales, adaptándonos a tus necesidades.</p>
+            <p>Diseñamos productos industriales innovadores y funcionales para tus necesidades.</p>
         </div>
         <div class="service-item">
-            <h3>Prototipado</h3>
-            <p>Ofrecemos prototipado rápido utilizando tecnologías como impresión 3D y tecnologías de punta.</p>
+            <h3>Prototipado Rápido</h3>
+            <p>Ofrecemos servicios de prototipado rápido para validar tus ideas en poco tiempo.</p>
         </div>
         <div class="service-item">
             <h3>Consultoría</h3>
-            <p>Brindamos asesoría en diseño y desarrollo de productos, optimizando cada etapa del proceso.</p>
+            <p>Brindamos asesoría especializada en procesos de diseño y fabricación.</p>
         </div>
     </div>
 </div>
 
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
-    <h2 class="section-title">Contáctanos</h2>
-    <form action="#" method="post">
-        <input type="text" placeholder="Tu Nombre" required>
-        <input type="email" placeholder="Tu Correo" required>
-        <textarea placeholder="Tu Mensaje" required></textarea>
+    <h2 class="section-title">Contacto</h2>
+    <p>Si tienes preguntas o deseas más información, no dudes en contactarnos.</p>
+    <form>
+        <input type="text" placeholder="Nombre" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <textarea placeholder="Mensaje" required></textarea><br>
         <button type="submit">Enviar</button>
     </form>
 </div>
@@ -262,33 +265,13 @@
 
 <script>
     function showSection(sectionId) {
-        // Ocultar todas las secciones
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
-            section.classList.remove('active');
+            section.classList.remove('active'); // Ocultar todas las secciones
         });
-
-        // Mostrar la sección seleccionada
-        const selectedSection = document.getElementById(sectionId);
-        selectedSection.classList.add('active');
-
-        // Desplazar suavemente a la sección
-        window.scrollTo({
-            top: selectedSection.offsetTop,
-            behavior: 'smooth'
-        });
-    }
-
-    // Mantener la sección activa después de actualizar la página
-    window.onload = function() {
-        const hash = window.location.hash.substring(1);
-        if (hash) {
-            showSection(hash);
-        } else {
-            showSection('proyectos'); // Sección por defecto
-        }
+        document.getElementById(sectionId).classList.add('active'); // Mostrar la sección seleccionada
     }
 </script>
-
 </body>
 </html>
+
