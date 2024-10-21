@@ -14,46 +14,22 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
             box-sizing: border-box;
-        }
-
-        /* Barra de navegación */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 0;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        .btn-group a {
-            padding: 10px 20px;
-            color: black;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .btn-group a:hover {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: black; /* Fondo negro */
+            color: white; /* Texto blanco */
         }
 
         /* Estilo para la portada principal */
         .hero {
-            background-image: url('https://github.com/user-attachments/assets/8ffd9cdc-2d45-437b-ba43-a7c008ced9d1'); /* Imagen de fondo */
-            height: 100vh; /* Ocupa toda la pantalla */
+            background-image: url('https://github.com/user-attachments/assets/8ffd9cdc-2d45-437b-ba43-a7c008ced9d1');
+            height: 100vh;
             background-size: cover;
             background-position: center;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            color: white;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-top: 60px; /* Ajusta el margen superior para evitar el menú fijo */
+            color: white;
         }
 
         .hero h1 {
@@ -68,6 +44,28 @@
             margin-bottom: 40px;
         }
 
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px; /* Espaciado en la parte superior */
+        }
+
+        .btn-group a {
+            padding: 15px 30px;
+            background-color: rgba(0, 255, 0, 0.8); /* Verde brillante */
+            color: black; /* Texto negro */
+            text-decoration: none;
+            font-size: 1.2em;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-group a:hover {
+            background-color: white;
+            color: black;
+        }
+
         /* Secciones ocultas al inicio */
         .section {
             display: none;
@@ -75,14 +73,13 @@
             text-align: center;
         }
 
-        /* Estilo para las secciones */
         .active {
             display: block;
         }
 
         .section-title {
             font-size: 2.5em;
-            color: #333;
+            color: #00FF00; /* Verde bonito */
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -109,7 +106,7 @@
         }
 
         .service-item {
-            background-color: #f9f9f9;
+            background-color: #333; /* Fondo gris oscuro */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -117,13 +114,13 @@
 
         .service-item h3 {
             font-size: 1.5em;
-            color: #333;
+            color: #00FF00; /* Verde bonito */
             margin-bottom: 10px;
         }
 
         .service-item p {
             font-size: 1em;
-            color: #666;
+            color: #ccc; /* Texto gris claro */
             line-height: 1.5;
         }
 
@@ -165,13 +162,13 @@
 <body>
 
 <!-- Menú de navegación -->
-<div class="navbar">
+<nav style="background-color: #222; padding: 15px; text-align: center;">
     <div class="btn-group">
         <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </div>
-</div>
+</nav>
 
 <!-- Portada Principal -->
 <div class="hero">
@@ -204,7 +201,7 @@
         </div>
         <div class="service-item">
             <h3>Consultoría</h3>
-            <p>Nuestros expertos están aquí para guiarte en cada etapa de tu proyecto. Te ayudamos a identificar oportunidades de mejora y optimizar tus procesos para maximizar la eficiencia.</p>
+            <p>Te asesoramos en todas las fases del desarrollo, optimizando los procesos y seleccionando los materiales adecuados para cada proyecto. Te ayudamos a cumplir con normativas de seguridad y calidad.</p>
         </div>
     </div>
 </div>
