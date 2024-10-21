@@ -272,59 +272,65 @@
     <h2 class="section-title">Servicios</h2>
     <div class="services">
         <div class="service-item">
-            <h3>Diseño 3D</h3>
-            <p>Ofrecemos soluciones de diseño en 3D para tus proyectos.</p>
+            <h3>Diseño</h3>
+            <p>Ofrecemos un servicio de diseño personalizado adaptado a tus necesidades.</p>
         </div>
         <div class="service-item">
             <h3>Prototipado Rápido</h3>
-            <p>Desarrollamos prototipos funcionales para validar tus ideas.</p>
+            <p>Prototipado rápido para validar tus ideas en poco tiempo.</p>
         </div>
         <div class="service-item">
             <h3>Consultoría</h3>
-            <p>Brindamos asesoría especializada en diseño y tecnología.</p>
+            <p>Asesoría especializada en procesos de diseño y fabricación.</p>
         </div>
     </div>
 </div>
 
-<!-- Nueva Sección Sobre Nosotros -->
+<!-- Nueva sección sobre la empresa -->
 <div class="about-section">
-    <h2 class="section-title">Sobre Nosotros</h2>
-    
-    <!-- Formato: Texto - Foto -->
+    <h2 class="section-title">Acerca de Nosotros</h2>
+
+    <!-- Primer bloque: Dedicados -->
     <div class="about-item">
+        <img src="https://via.placeholder.com/200" alt="Dedicados">
         <div>
-            <h3>Nuestra Misión</h3>
-            <p>En HexaDesign, nos dedicamos a transformar ideas en realidad mediante el diseño y prototipado de piezas mecánicas.</p>
-        </div>
-        <img src="https://via.placeholder.com/150" alt="Misión">
-    </div>
-    
-    <!-- Formato: Foto - Texto -->
-    <div class="about-item">
-        <img src="https://via.placeholder.com/150" alt="Visión">
-        <div>
-            <h3>Nuestra Visión</h3>
-            <p>Queremos ser líderes en innovación y tecnología, ofreciendo soluciones creativas a nuestros clientes.</p>
+            <h3>Dedicados</h3>
+            <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes. Nuestro equipo de expertos trabaja incansablemente para garantizar que cada proyecto sea un éxito.</p>
         </div>
     </div>
 
-    <!-- Formato: Texto - Foto -->
+    <!-- Segundo bloque: Bajo Costo -->
     <div class="about-item">
         <div>
-            <h3>Valores</h3>
-            <p>Nos basamos en la integridad, la calidad y la innovación en cada proyecto que emprendemos.</p>
+            <h3>Bajo Costo</h3>
+            <p>Nos comprometemos a ofrecer servicios de alta calidad a precios competitivos. Creemos que un excelente diseño no debería romper el banco, y trabajamos para optimizar costos sin sacrificar calidad.</p>
         </div>
-        <img src="https://via.placeholder.com/150" alt="Valores">
+        <img src="https://via.placeholder.com/200" alt="Bajo Costo">
+    </div>
+
+    <!-- Tercer bloque: Flexibilidad -->
+    <div class="about-item">
+        <img src="https://via.placeholder.com/200" alt="Flexibilidad">
+        <div>
+            <h3>Flexibilidad</h3>
+            <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente. Ya sea que necesites un diseño personalizado o un prototipo, estamos aquí para ajustar nuestros procesos a tus requerimientos.</p>
+        </div>
     </div>
 </div>
 
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
     <h2 class="section-title">Contacto</h2>
-    <p>Para más información, contáctanos a través de nuestro correo electrónico.</p>
+    <p>Si tienes preguntas o deseas más información, no dudes en contactarnos.</p>
+    <form>
+        <input type="text" placeholder="Nombre" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <textarea placeholder="Mensaje" required></textarea><br>
+        <button type="submit">Enviar</button>
+    </form>
 </div>
 
-<!-- Pie de Página -->
+<!-- Pie de página -->
 <footer>
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
@@ -333,21 +339,10 @@
     function showSection(sectionId) {
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
-            section.classList.remove('active');
+            section.classList.remove('active'); // Ocultar todas las secciones
         });
-        document.getElementById(sectionId).classList.add('active');
-        
-        // Guardar la sección activa en localStorage
-        localStorage.setItem('activeSection', sectionId);
+        document.getElementById(sectionId).classList.add('active'); // Mostrar la sección seleccionada
     }
-
-    // Mantener la sección activa al recargar la página
-    window.onload = function() {
-        const activeSection = localStorage.getItem('activeSection') || 'proyectos';
-        showSection(activeSection);
-    };
 </script>
-
 </body>
 </html>
-
