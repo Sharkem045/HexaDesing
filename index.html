@@ -212,7 +212,7 @@
 </div>
 
 <!-- Sección de Proyectos -->
-<div id="proyectos" class="section active">
+<div id="proyectos" class="section">
     <h2 class="section-title">Nuestros Proyectos</h2>
     <p>Aquí mostramos algunos de nuestros proyectos destacados en el campo del diseño industrial.</p>
     <div class="gallery">
@@ -247,9 +247,9 @@
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
     <h2 class="section-title">Contáctanos</h2>
-    <p>Si tienes alguna consulta o quieres saber más sobre nuestros servicios, no dudes en contactarnos.</p>
-    <p>Email: HexaDesign@outlook.com</p>
-    <p>Teléfono: +52 33 3950 7611</p>
+    <p>Si tienes alguna consulta o quieres saber más sobre nuestros servicios, contáctanos:</p>
+    <p>Email: contacto@hexadesign.com</p>
+    <p>Teléfono: +52 1 55 5555 5555</p>
 </div>
 
 <!-- Pie de página -->
@@ -258,14 +258,21 @@
 </footer>
 
 <script>
+    // Función para mostrar la sección correspondiente
     function showSection(sectionId) {
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
             section.classList.remove('active');
         });
         document.getElementById(sectionId).classList.add('active');
+        localStorage.setItem('activeSection', sectionId); // Guardar la sección activa en localStorage
     }
+
+    // Al cargar la página, mostrar la sección guardada
+    window.onload = function() {
+        const activeSection = localStorage.getItem('activeSection') || 'hero'; // Sección por defecto
+        showSection(activeSection);
+    };
 </script>
 </body>
 </html>
-
