@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Diseño y Prototipado">
     <title>HexaDesign</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Estilos generales */
         body, html {
@@ -15,51 +16,91 @@
             font-family: 'Arial', sans-serif;
             overflow-x: hidden;
             box-sizing: border-box;
-            background-color: #f0f0f0; /* Fondo gris claro */
-            color: #333; /* Texto gris oscuro */
+            background-color: #f0f0f0;
+            color: #333;
         }
 
-        /* Estilo para la portada principal */
+        /* Transiciones suaves y animaciones */
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-in {
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Portada principal */
         .hero {
             background-image: url(https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046);
             height: 100vh;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro más opaco */
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            font-size: 4em;
             letter-spacing: 3px;
-            color: #e0e0e0; /* Color gris claro */
+            color: #e0e0e0;
+            animation: fadeIn 2s;
         }
 
         .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
+            font-size: 1.5em;
             max-width: 80%;
             color: #d0d0d0;
+            animation: slideIn 2s;
         }
 
-        /* Menú en la parte superior */
+        .cta-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5a50;
+        }
+
+        /* Menú de navegación */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #444; /* Fondo gris oscuro */
+            background-color: #222;
             padding: 15px 25px;
-            position: relative;
+            position: fixed;
+            width: 100%;
+            top: 0;
             z-index: 10;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.5s;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(34, 34, 34, 0.9);
         }
 
         .navbar a {
@@ -73,7 +114,7 @@
         }
 
         .navbar a:hover {
-            background-color: #666; /* Gris medio al pasar el ratón */
+            background-color: #666;
             color: #fff;
         }
 
@@ -143,8 +184,8 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            padding: 40px 20px;
-            background-color: #fff; /* Fondo blanco */
+            padding: 60px 20px;
+            background-color: #fff;
         }
 
         .info-box {
@@ -175,100 +216,72 @@
             line-height: 1.5;
         }
 
-        @media (max-width: 768px) {
-            .info-section {
-                flex-direction: column;
-                padding: 20px 10px;
-            }
-
-            .info-box {
-                max-width: 90%;
-                margin-bottom: 20px;
-            }
-        }
-
-        /* Secciones */
-        .section {
-            display: none;
-            padding: 50px 20px;
+        /* Sección de Proyectos */
+        .projects-section {
+            padding: 80px 20px;
+            background-color: #f0f0f0;
             text-align: center;
-            background-color: #fafafa; /* Fondo gris claro */
         }
 
-        .active {
+        .projects-section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
             display: block;
         }
 
-        .section-title {
-            font-size: 2.3em;
-            color: #333;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        /* Galería de proyectos */
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-        .gallery img {
-            max-width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            width: 300px;
-            height: auto;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Sección de servicios */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .service-item {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-        }
-
-        .service-item:hover {
+        .project-card:hover {
+            transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .service-item h3 {
+        .project-card h3 {
+            padding: 15px;
             font-size: 1.4em;
             color: #333;
-            margin-bottom: 10px;
         }
 
-        .service-item p {
-            font-size: 0.95em;
-            color: #555;
-            line-height: 1.4;
+        /* Pie de página */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
         }
 
-        @media (max-width: 1200px) {
-            .services {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
         }
 
-        @media (max-width: 768px) {
-            .services {
-                grid-template-columns: 1fr;
-            }
+        /* Animaciones de carga en scroll */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -292,63 +305,43 @@
 <!-- Portada Principal -->
 <div class="hero">
     <h1>HexaDesign</h1>
-    <p>Descubre nuestras soluciones creativas y proyectos innovadores en diseño industrial.</p>
+    <p>Explora nuestras soluciones creativas y proyectos innovadores en diseño industrial.</p>
+    <button class="cta-button">Contáctanos</button>
 </div>
 
 <!-- Sección de Información destacada -->
-<div class="info-section">
+<div class="info-section fade-in">
     <div class="info-box">
         <h3>Compromiso</h3>
-        <p>En HexaDesign, estamos comprometidos con la calidad y la satisfacción del cliente.</p>
+        <p>Estamos comprometidos con la calidad y la satisfacción del cliente.</p>
     </div>
     <div class="info-box">
         <h3>Accesibilidad</h3>
-        <p>Ofrecemos soluciones accesibles para proyectos de diseño de cualquier escala.</p>
+        <p>Soluciones accesibles para proyectos de cualquier escala.</p>
     </div>
     <div class="info-box">
         <h3>Adaptabilidad</h3>
-        <p>Nuestro equipo se adapta a tus necesidades específicas para lograr resultados óptimos.</p>
+        <p>Nos adaptamos a tus necesidades para obtener resultados óptimos.</p>
     </div>
 </div>
 
 <!-- Sección de Proyectos -->
-<div id="proyectos" class="section">
-    <h2 class="section-title">Proyectos Destacados</h2>
-    <div class="gallery">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 3">
-    </div>
-</div>
-
-<!-- Sección de Servicios -->
-<div id="servicios" class="section">
-    <h2 class="section-title">Nuestros Servicios</h2>
-    <div class="services">
-        <div class="service-item">
-            <h3>Diseño Personalizado</h3>
-            <p>Creamos diseños únicos y adaptados a tus necesidades específicas.</p>
+<div id="proyectos" class="projects-section scroll-animate">
+    <h2>Proyectos Destacados</h2>
+    <div class="projects-gallery">
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+            <h3>Proyecto 1</h3>
         </div>
-        <div class="service-item">
-            <h3>Prototipado Eficiente</h3>
-            <p>Ofrecemos prototipado rápido para validar tus ideas de manera eficaz.</p>
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+            <h3>Proyecto 2</h3>
         </div>
-        <div class="service-item">
-            <h3>Consultoría Integral</h3>
-            <p>Asesoría completa en procesos de diseño y fabricación para optimizar tu proyecto.</p>
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 3">
+            <h3>Proyecto 3</h3>
         </div>
     </div>
-</div>
-
-<!-- Sección de Contacto -->
-<div id="contacto" class="section">
-    <h2 class="section-title">Contáctanos</h2>
-    <form>
-        <input type="text" placeholder="Nombre" required><br>
-        <input type="email" placeholder="Email" required><br>
-        <textarea placeholder="Mensaje" required></textarea><br>
-        <button type="submit">Enviar</button>
-    </form>
 </div>
 
 <!-- Pie de página -->
@@ -357,6 +350,34 @@
 </footer>
 
 <script>
+    // Mostrar secciones al hacer scroll
+    document.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.scroll-animate');
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add('visible');
+            }
+        });
+    });
+
+    // Cambiar color del menú al hacer scroll
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Mostrar/ocultar menú de hamburguesa
+    function toggleMenu() {
+        const menu = document.querySelector('.navbar-menu');
+        menu.classList.toggle('active');
+    }
+
+    // Mostrar secciones seleccionadas
     function showSection(sectionId) {
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
@@ -364,13 +385,10 @@
         });
         document.getElementById(sectionId).classList.add('active');
     }
-
-    function toggleMenu() {
-        const menu = document.querySelector('.navbar-menu');
-        menu.classList.toggle('active');
-    }
 </script>
 </body>
 </html>
+
+
 
 
