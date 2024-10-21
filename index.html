@@ -160,8 +160,6 @@
             border-radius: 10px;
             overflow: hidden; /* Evitar que el contenido sobresalga */
             transition: transform 0.3s;
-            width: 80%; /* Ajusta el ancho total */
-            margin: 0 auto; /* Centra los bloques */
         }
 
         .about-item:hover {
@@ -169,13 +167,14 @@
         }
 
         .about-item img {
-            width: 100px; /* Ancho del 100px para la imagen */
+            width: 50%; /* Ancho del 50% para la imagen */
             height: auto; /* Mantiene la relación de aspecto */
-            margin-right: 20px; /* Espaciado a la derecha */
         }
 
         .about-item div {
-            text-align: left; /* Alinear texto a la izquierda */
+            width: 50%; /* Ancho del 50% para el texto */
+            padding: 20px;
+            text-align: left;
         }
 
         /* Estilos para el pie de página */
@@ -229,7 +228,11 @@
             }
 
             .about-item img {
-                width: 50px; /* Ancho del 50px para móviles */
+                width: 100%; /* Ancho completo en móviles */
+            }
+
+            .about-item div {
+                width: 100%; /* Ancho completo en móviles */
             }
         }
     </style>
@@ -255,6 +258,7 @@
 <!-- Sección de Proyectos -->
 <div id="proyectos" class="section">
     <h2 class="section-title">Nuestros Proyectos</h2>
+    <p>Aquí mostramos algunos de nuestros proyectos destacados en el campo del diseño industrial.</p>
     <div class="gallery">
         <img src="https://via.placeholder.com/300" alt="Proyecto 1">
         <img src="https://via.placeholder.com/300" alt="Proyecto 2">
@@ -287,9 +291,7 @@
 
     <!-- Primer bloque: Dedicados -->
     <div class="about-item">
-        <img src="https://via.placeholder.com/100" alt="Dedicados">
-    </div>
-    <div class="about-item">
+        <img src="https://via.placeholder.com/250" alt="Dedicados">
         <div>
             <h3>Dedicados</h3>
             <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes. Nuestro equipo de expertos trabaja incansablemente para garantizar que cada proyecto sea un éxito.</p>
@@ -302,16 +304,12 @@
             <h3>Bajo Costo</h3>
             <p>Nos comprometemos a ofrecer servicios de alta calidad a precios competitivos. Creemos que un excelente diseño no debería romper el banco, y trabajamos para optimizar costos sin sacrificar calidad.</p>
         </div>
-    </div>
-    <div class="about-item">
-        <img src="https://via.placeholder.com/100" alt="Bajo Costo">
+        <img src="https://via.placeholder.com/250" alt="Bajo Costo">
     </div>
 
     <!-- Tercer bloque: Flexibilidad -->
     <div class="about-item">
-        <img src="https://via.placeholder.com/100" alt="Flexibilidad">
-    </div>
-    <div class="about-item">
+        <img src="https://via.placeholder.com/250" alt="Flexibilidad">
         <div>
             <h3>Flexibilidad</h3>
             <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente. Ya sea que necesites un diseño personalizado o un prototipo, estamos aquí para ajustar nuestros procesos a tus requerimientos.</p>
