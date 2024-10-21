@@ -132,6 +132,22 @@
             margin-top: 50px;
         }
 
+        /* Menú en la parte superior */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 15px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
+
         /* Responsividad */
         @media (max-width: 1200px) {
             .services {
@@ -162,13 +178,14 @@
 <body>
 
 <!-- Menú de navegación -->
-<nav style="background-color: #222; padding: 15px; text-align: center;">
+<div class="navbar">
+    <a href="#" onclick="showSection('hero')">HexaDesign</a>
     <div class="btn-group">
         <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </div>
-</nav>
+</div>
 
 <!-- Portada Principal -->
 <div class="hero">
@@ -228,4 +245,5 @@
 
 </body>
 </html>
+
 
