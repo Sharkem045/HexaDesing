@@ -17,7 +17,7 @@
             background-color: #f5f5f5;
         }
 
-        /* Estilo del menú superior */
+        /* Estilo del menú superior ajustado */
         nav {
             background-color: rgba(0, 0, 0, 0.85);
             position: fixed;
@@ -25,16 +25,17 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            padding: 15px 50px;
+            padding: 10px 30px; /* Reducir el padding para un tamaño más compacto */
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Agregar sombra para estilo */
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 8px 15px; /* Ajustar el padding para hacer más pequeño */
             font-size: 1em;
         }
 
@@ -43,9 +44,9 @@
             border-radius: 5px;
         }
 
-        /* Espacio para evitar que el contenido quede detrás del menú */
+        /* Espacio ajustado para evitar que el contenido quede detrás del menú */
         .spacer {
-            height: 80px; /* Altura del menú */
+            height: 60px; /* Altura más ajustada para el espacio del menú */
         }
 
         /* Estilo para la portada principal */
@@ -65,7 +66,7 @@
         }
 
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 3em; /* Tamaño ajustado para un mejor balance visual */
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -73,7 +74,7 @@
         }
 
         .hero p {
-            font-size: 1.3em;
+            font-size: 1.2em; /* Ajustar tamaño del texto para armonía */
             margin-bottom: 30px;
             max-width: 600px;
             line-height: 1.5;
@@ -165,6 +166,15 @@
             .hero p {
                 font-size: 1.1em;
             }
+
+            nav {
+                padding: 10px 20px; /* Reducir el padding en pantallas más pequeñas */
+            }
+
+            nav a {
+                padding: 6px 10px; /* Reducir el padding en los enlaces */
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -255,3 +265,4 @@
 
 </body>
 </html>
+
