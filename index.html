@@ -132,6 +132,51 @@
             }
         }
 
+        /* Sección de Información destacada */
+        .info-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .info-box {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .info-box p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .info-section {
+                flex-direction: column;
+            }
+
+            .info-box {
+                width: 80%;
+            }
+        }
+
         /* Secciones */
         .section {
             display: none;
@@ -172,6 +217,22 @@
 <div class="hero">
     <h1>HexaDesign</h1>
     <p>Explora nuestros servicios y proyectos de diseño</p>
+</div>
+
+<!-- Sección de Información destacada -->
+<div class="info-section">
+    <div class="info-box">
+        <h3>Dedicados</h3>
+        <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes.</p>
+    </div>
+    <div class="info-box">
+        <h3>Bajo Costo</h3>
+        <p>Ofrecemos piezas y modelos de alta calidad a precios competitivos para optimizar costos sin sacrificar calidad.</p>
+    </div>
+    <div class="info-box">
+        <h3>Flexibilidad</h3>
+        <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente para ajustarnos a sus requerimientos.</p>
+    </div>
 </div>
 
 <!-- Sección de Proyectos -->
@@ -235,4 +296,5 @@
 </script>
 </body>
 </html>
+
 
