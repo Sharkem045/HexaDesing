@@ -50,6 +50,7 @@
         /* Menú en la parte superior */
         .navbar {
             display: flex;
+            flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
             justify-content: space-between; /* Espacio entre el nombre y los enlaces */
             align-items: center;
             background-color: #222; /* Fondo negro para el menú */
@@ -148,7 +149,6 @@
         .about-section {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra horizontalmente */
             margin-top: 50px; /* Separación de la sección anterior */
             padding: 20px;
         }
@@ -230,21 +230,28 @@
                 font-size: 0.9em; /* Texto más pequeño en móviles */
             }
 
-            .about-item {
-                flex-direction: column; /* Cambiar a columna en móviles */
-                align-items: center; /* Centrar horizontalmente */
-                width: 90%; /* Ajustar el ancho total */
-            }
-
             .about-item img {
-                width: 100%; /* Ancho completo para la imagen en móviles */
-                max-width: 150px; /* Max ancho para la imagen en móviles */
+                width: 50%; /* Ancho del 50% para móviles */
             }
 
             .about-item div {
-                width: 100%; /* Ancho completo para el texto en móviles */
-                text-align: center; /* Centrar texto en móviles */
-                padding: 10px; /* Menos padding en móviles */
+                width: 50%; /* Ancho del 50% para móviles */
+            }
+
+            .gallery img {
+                width: 100%; /* Ancho completo en móviles */
+                max-width: none; /* Elimina el max-width en móviles */
+            }
+
+            form input, form textarea {
+                width: 90%; /* Ancho de los campos del formulario */
+                margin: 10px auto; /* Centramos los campos */
+                padding: 10px; /* Espaciado interno para mejor uso */
+            }
+
+            form button {
+                padding: 10px 20px; /* Ajustar padding del botón */
+                font-size: 1em; /* Tamaño de fuente del botón */
             }
         }
     </style>
@@ -257,69 +264,74 @@
     <div>
         <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+        <a href="#nosotros" onclick="showSection('nosotros')">Nosotros</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
-        <a href="#about" onclick="showSection('about')">Acerca de</a>
     </div>
 </div>
 
-<!-- Sección de la portada principal -->
+<!-- Sección de la portada -->
 <div class="hero" id="hero">
     <h1>Bienvenido a HexaDesign</h1>
-    <p>Diseño y prototipado de soluciones innovadoras.</p>
+    <p>Diseño y prototipado de soluciones innovadoras</p>
 </div>
 
-<!-- Sección de Proyectos -->
-<div id="proyectos" class="section">
-    <h2 class="section-title">Proyectos</h2>
+<!-- Sección de proyectos -->
+<div class="section" id="proyectos">
+    <h2 class="section-title">Nuestros Proyectos</h2>
     <div class="gallery">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 3">
+        <img src="https://example.com/proyecto1.jpg" alt="Proyecto 1">
+        <img src="https://example.com/proyecto2.jpg" alt="Proyecto 2">
+        <img src="https://example.com/proyecto3.jpg" alt="Proyecto 3">
     </div>
 </div>
 
-<!-- Sección de Servicios -->
-<div id="servicios" class="section">
+<!-- Sección de servicios -->
+<div class="section" id="servicios">
     <h2 class="section-title">Servicios</h2>
     <div class="services">
         <div class="service-item">
             <h3>Diseño 3D</h3>
-            <p>Creación de modelos y prototipos.</p>
+            <p>Desarrollamos modelos 3D personalizados para tus proyectos.</p>
         </div>
         <div class="service-item">
-            <h3>Consultoría</h3>
-            <p>Asesoría en procesos de diseño y fabricación.</p>
+            <h3>Prototipado Rápido</h3>
+            <p>Creamos prototipos funcionales para validar tus ideas.</p>
         </div>
         <div class="service-item">
-            <h3>Desarrollo de Software</h3>
-            <p>Programación de soluciones personalizadas.</p>
+            <h3>Consultoría Técnica</h3>
+            <p>Te asesoramos en la implementación de soluciones innovadoras.</p>
         </div>
     </div>
 </div>
 
-<!-- Nueva sección: Acerca de Nosotros -->
-<div class="about-section" id="about">
-    <h2 class="section-title">Acerca de Nosotros</h2>
+<!-- Sección de la empresa -->
+<div class="about-section" id="nosotros">
+    <h2 class="section-title">Sobre Nosotros</h2>
     <div class="about-item">
-        <img src="https://via.placeholder.com/150" alt="Equipo">
-        <div>
-            <h3>Nuestra Misión</h3>
-            <p>Proporcionar soluciones innovadoras en diseño y prototipado.</p>
-        </div>
-    </div>
-    <div class="about-item">
-        <img src="https://via.placeholder.com/150" alt="Equipo">
+        <img src="https://example.com/equipo.jpg" alt="Nuestro equipo">
         <div>
             <h3>Nuestro Equipo</h3>
-            <p>Un grupo de profesionales apasionados por el diseño.</p>
+            <p>Un equipo de expertos en diseño y tecnología listos para ayudarte.</p>
+        </div>
+    </div>
+    <div class="about-item">
+        <img src="https://example.com/valores.jpg" alt="Nuestros valores">
+        <div>
+            <h3>Nuestros Valores</h3>
+            <p>Comprometidos con la calidad, la innovación y la satisfacción del cliente.</p>
         </div>
     </div>
 </div>
 
-<!-- Sección de Contacto -->
-<div id="contacto" class="section">
+<!-- Sección de contacto -->
+<div class="section" id="contacto">
     <h2 class="section-title">Contacto</h2>
-    <p>Contáctanos en <a href="mailto:info@hexadesign.com">info@hexadesign.com</a></p>
+    <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <textarea placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
 </div>
 
 <!-- Pie de página -->
@@ -338,3 +350,4 @@
 </script>
 </body>
 </html>
+
