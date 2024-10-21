@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HexaDesign">
+    <meta name="description" content="HexaDesign - Diseño y Prototipado">
     <title>HexaDesign</title>
     <style>
+        /* Estilos generales */
         body, html {
             margin: 0;
             padding: 0;
@@ -101,6 +102,11 @@
         .gallery img {
             max-width: 100%;
             border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
         }
 
         /* Sección de servicios con tres columnas */
@@ -116,6 +122,11 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
         }
 
         .service-item h3 {
@@ -174,6 +185,7 @@
         <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
+        <a href="#blog" onclick="showSection('blog')">Blog</a> <!-- Enlace a blog -->
     </div>
 </div>
 
@@ -184,13 +196,16 @@
 </div>
 
 <!-- Sección de Proyectos -->
-<div id="proyectos" class="section">
+<div id="proyectos" class="section active">
     <h2 class="section-title">Nuestros Proyectos</h2>
     <p>Aquí mostramos algunos de nuestros proyectos destacados en el campo del diseño industrial.</p>
     <div class="gallery">
         <img src="https://via.placeholder.com/300" alt="Proyecto 1">
         <img src="https://via.placeholder.com/300" alt="Proyecto 2">
         <img src="https://via.placeholder.com/300" alt="Proyecto 3">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 4">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 5">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 6">
     </div>
 </div>
 
@@ -200,25 +215,40 @@
     <div class="services">
         <div class="service-item">
             <h3>Diseño de Productos</h3>
-            <p>Diseñamos productos industriales innovadores y funcionales, adaptándonos a tus necesidades. Nos enfocamos en crear soluciones que optimicen el proceso de fabricación y mejoren la experiencia del usuario.</p>
+            <p>Diseñamos productos industriales innovadores y funcionales, adaptándonos a tus necesidades.</p>
         </div>
         <div class="service-item">
             <h3>Prototipado</h3>
-            <p>Ofrecemos prototipado rápido utilizando tecnologías como impresión 3D y tecnologías de punta. Esto te permite validar y ajustar tu diseño antes de la producción final, ahorrando tiempo y costos.</p>
+            <p>Ofrecemos prototipado rápido utilizando tecnologías como impresión 3D y tecnologías de punta.</p>
         </div>
         <div class="service-item">
             <h3>Consultoría</h3>
-            <p>Te asesoramos en todas las fases del desarrollo, optimizando los procesos y seleccionando los materiales adecuados para cada proyecto. Te ayudamos a cumplir con normativas de seguridad y calidad.</p>
+            <p>Brindamos asesoría en diseño y desarrollo de productos, optimizando cada etapa del proceso.</p>
         </div>
     </div>
 </div>
 
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
-    <h2 class="section-title">Contacto</h2>
-    <p>Si deseas más información sobre nuestros servicios o quieres discutir un proyecto, no dudes en contactarnos.</p>
+    <h2 class="section-title">Contáctanos</h2>
+    <form action="#" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
 </div>
 
+<!-- Sección de Blog -->
+<div id="blog" class="section">
+    <h2 class="section-title">Blog</h2>
+    <p>Próximamente, un espacio donde compartiremos nuestras últimas novedades y artículos de interés.</p>
+</div>
+
+<!-- Pie de página -->
 <footer>
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
