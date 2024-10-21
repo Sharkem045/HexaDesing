@@ -22,14 +22,16 @@
         .hero {
             background-image: url(https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046);
             height: 100vh;
-            background-size: cover;
+            background-size: contain; /* Cambiado a contain para mantener la proporción */
             background-position: center;
+            background-repeat: no-repeat; /* Evitar que la imagen se repita */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white; /* Texto blanco sobre fondo */
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente para mejor legibilidad */
         }
 
         .hero h1 {
@@ -59,7 +61,7 @@
             color: white;
             text-decoration: none;
             margin: 0 15px; /* Espaciado horizontal entre los botones */
-            font-size: 1.25em; /* Tamaño de letra aumentado a 2 veces más grande */
+            font-size: 1.25em; /* Tamaño de letra aumentado */
             padding: 8px 15px; /* Padding ajustado para botones */
             border-radius: 5px; /* Esquinas redondeadas */
             transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
