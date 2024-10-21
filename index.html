@@ -47,10 +47,10 @@
         /* Menú en la parte superior */
         .navbar {
             display: flex;
-            justify-content: center; /* Centrar todos los elementos en el menú */
+            justify-content: space-between; /* Espacio entre el nombre y los enlaces */
             align-items: center;
             background-color: #222; /* Fondo negro para el menú */
-            padding: 10px 0; /* Reducido para un menú más angosto */
+            padding: 10px 20px; /* Padding para el menú */
             position: relative;
             z-index: 10;
         }
@@ -58,8 +58,8 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 20px; /* Espaciado horizontal entre los botones */
-            font-size: 1.1em; /* Ajustado para mejor visual */
+            margin: 0 15px; /* Espaciado horizontal entre los botones */
+            font-size: 1em; /* Ajustado para mejor visual */
             padding: 8px 15px; /* Padding ajustado para botones */
             border-radius: 5px; /* Esquinas redondeadas */
             transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
@@ -158,7 +158,7 @@
 
             .navbar a {
                 padding: 6px 12px; /* Ajustar padding en móviles */
-                font-size: 1em;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -168,9 +168,11 @@
 <!-- Menú de navegación -->
 <div class="navbar">
     <a href="#" onclick="showSection('hero')">HexaDesign</a>
-    <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
-    <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
-    <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
+    <div>
+        <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
+        <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
+    </div>
 </div>
 
 <!-- Portada Principal -->
