@@ -44,26 +44,36 @@
             margin-bottom: 40px;
         }
 
+        /* Menú en la parte superior */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 15px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+            padding: 10px 20px; /* Padding para botones */
+            border-radius: 5px; /* Esquinas redondeadas */
+            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+        }
+
+        .navbar a:hover {
+            background-color: #1E90FF; /* Azul noche al pasar el ratón */
+            color: black; /* Cambia a texto negro al pasar el ratón */
+        }
+
         .btn-group {
             display: flex;
             gap: 15px;
             margin-top: 20px; /* Espaciado en la parte superior */
-        }
-
-        .btn-group a {
-            padding: 15px 30px;
-            background-color: #1E1E1E; /* Fondo gris oscuro */
-            color: white; /* Texto blanco */
-            text-decoration: none;
-            font-size: 1.2em;
-            border: 2px solid white;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .btn-group a:hover {
-            background-color: white;
-            color: black;
         }
 
         /* Secciones ocultas al inicio */
@@ -132,22 +142,6 @@
             margin-top: 50px;
         }
 
-        /* Menú en la parte superior */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #222;
-            padding: 15px 20px;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 1.2em;
-        }
-
         /* Responsividad */
         @media (max-width: 1200px) {
             .services {
@@ -168,8 +162,8 @@
                 font-size: 1.2em;
             }
 
-            .btn-group a {
-                padding: 10px 20px;
+            .navbar a {
+                padding: 8px 15px; /* Ajustar padding en móviles */
                 font-size: 1em;
             }
         }
@@ -245,5 +239,4 @@
 
 </body>
 </html>
-
 
