@@ -167,11 +167,11 @@
             }
 
             .hero h1 {
-                font-size: 3em;
+                font-size: 3em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
             }
 
             .hero p {
-                font-size: 1.2em;
+                font-size: 1.2em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
             }
 
             .navbar a {
@@ -212,7 +212,7 @@
 </div>
 
 <!-- Sección de Proyectos -->
-<div id="proyectos" class="section">
+<div id="proyectos" class="section active">
     <h2 class="section-title">Nuestros Proyectos</h2>
     <p>Aquí mostramos algunos de nuestros proyectos destacados en el campo del diseño industrial.</p>
     <div class="gallery">
@@ -247,9 +247,12 @@
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
     <h2 class="section-title">Contáctanos</h2>
-    <p>Si tienes alguna consulta o quieres saber más sobre nuestros servicios, contáctanos:</p>
-    <p>Email: contacto@hexadesign.com</p>
-    <p>Teléfono: +52 1 55 5555 5555</p>
+    <form action="#" method="post">
+        <input type="text" placeholder="Tu Nombre" required>
+        <input type="email" placeholder="Tu Correo" required>
+        <textarea placeholder="Tu Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
 </div>
 
 <!-- Pie de página -->
@@ -258,21 +261,34 @@
 </footer>
 
 <script>
-    // Función para mostrar la sección correspondiente
     function showSection(sectionId) {
+        // Ocultar todas las secciones
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
             section.classList.remove('active');
         });
-        document.getElementById(sectionId).classList.add('active');
-        localStorage.setItem('activeSection', sectionId); // Guardar la sección activa en localStorage
+
+        // Mostrar la sección seleccionada
+        const selectedSection = document.getElementById(sectionId);
+        selectedSection.classList.add('active');
+
+        // Desplazar suavemente a la sección
+        window.scrollTo({
+            top: selectedSection.offsetTop,
+            behavior: 'smooth'
+        });
     }
 
-    // Al cargar la página, mostrar la sección guardada
+    // Mantener la sección activa después de actualizar la página
     window.onload = function() {
-        const activeSection = localStorage.getItem('activeSection') || 'hero'; // Sección por defecto
-        showSection(activeSection);
-    };
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            showSection(hash);
+        } else {
+            showSection('proyectos'); // Sección por defecto
+        }
+    }
 </script>
+
 </body>
 </html>
