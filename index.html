@@ -103,6 +103,7 @@
             max-width: 100%;
             border-radius: 10px;
             transition: transform 0.3s;
+            width: 300px; /* Ancho fijo para imágenes en computadoras */
         }
 
         .gallery img:hover {
@@ -152,13 +153,17 @@
         /* Responsividad */
         @media (max-width: 1200px) {
             .services {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+            }
+            .gallery img {
+                width: 100%; /* Ancho completo en pantallas pequeñas */
+                max-width: 400px; /* Max ancho en pantallas más grandes */
             }
         }
 
         @media (max-width: 768px) {
             .services {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
             }
 
             .hero h1 {
@@ -172,6 +177,18 @@
             .navbar a {
                 padding: 6px 12px; /* Ajustar padding en móviles */
                 font-size: 1.5em; /* Ajustado para móviles */
+            }
+
+            .section-title {
+                font-size: 2em; /* Títulos más pequeños en móviles */
+            }
+
+            .service-item h3 {
+                font-size: 1.25em; /* Títulos más pequeños en móviles */
+            }
+
+            .service-item p {
+                font-size: 0.9em; /* Texto más pequeño en móviles */
             }
         }
     </style>
@@ -265,3 +282,4 @@
 
 </body>
 </html>
+
