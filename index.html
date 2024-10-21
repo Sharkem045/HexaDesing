@@ -5,364 +5,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Diseño y Prototipado">
     <title>HexaDesign</title>
+    <!-- Fuentes y Estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Estilos generales */
+        /* Estilos Globales */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
-            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
             background-color: #f0f0f0;
-            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* Transiciones suaves y animaciones */
-        .fade-in {
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .slide-in {
-            animation: slideIn 1s ease-in-out;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Portada principal */
-        .hero {
-            background-image: url(https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046);
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .hero h1 {
-            font-size: 4em;
-            letter-spacing: 3px;
-            color: #e0e0e0;
-            animation: fadeIn 2s;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            max-width: 80%;
-            color: #d0d0d0;
-            animation: slideIn 2s;
-        }
-
-        .cta-button {
-            margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #ff5a50;
-        }
-
-        /* Menú de navegación */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #222;
-            padding: 15px 25px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 10;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.5s;
-        }
-
-        .navbar.scrolled {
-            background-color: rgba(34, 34, 34, 0.9);
+            z-index: 100;
+            transition: background-color 0.3s;
         }
 
         .navbar a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            margin: 0 12px;
-            font-size: 1em;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            margin: 0 15px;
+            font-size: 1.1em;
         }
 
-        .navbar a:hover {
-            background-color: #666;
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 1);
+        }
+
+        .navbar .brand {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: url('https://via.placeholder.com/1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #ff6f61;
+            border: none;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #ff3e2f;
+        }
+
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .video-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .video-section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: #fff;
         }
 
-        /* Menú de hamburguesa */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
         }
 
-        .hamburger div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 5px 0;
-            border-radius: 2px;
-        }
-
-        .navbar-menu {
-            display: flex;
-        }
-
-        /* Ocultar menú en móviles */
+        /* Estilos Responsivos */
         @media (max-width: 768px) {
-            .navbar-menu {
-                display: none;
-                flex-direction: column;
-                background-color: #444;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 220px;
-                border-radius: 0 0 5px 5px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            .navbar-menu a {
-                padding: 15px;
-                text-align: center;
-                border-bottom: 1px solid #555;
-            }
-
-            .navbar-menu a:last-child {
-                border-bottom: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .navbar-menu.active {
-                display: flex;
-            }
-
             .hero h1 {
                 font-size: 2em;
             }
 
-            .hero p {
-                font-size: 1em;
+            .section h2 {
+                font-size: 2em;
             }
-        }
-
-        /* Sección de Información destacada */
-        .info-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 60px 20px;
-            background-color: #fff;
-        }
-
-        .info-box {
-            background-color: #fafafa;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            flex: 1;
-            max-width: 30%;
-        }
-
-        .info-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .info-box h3 {
-            font-size: 1.6em;
-            margin-bottom: 10px;
-            color: #444;
-        }
-
-        .info-box p {
-            font-size: 1em;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* Sección de Proyectos */
-        .projects-section {
-            padding: 80px 20px;
-            background-color: #f0f0f0;
-            text-align: center;
-        }
-
-        .projects-section h2 {
-            font-size: 2.8em;
-            margin-bottom: 20px;
-        }
-
-        .projects-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-card h3 {
-            padding: 15px;
-            font-size: 1.4em;
-            color: #333;
-        }
-
-        /* Pie de página */
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
-        /* Animaciones de carga en scroll */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s, transform 0.6s;
-        }
-
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
-<!-- Menú de navegación -->
-<div class="navbar">
-    <a href="#" onclick="showSection('hero')">HexaDesign</a>
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+<!-- Menú de Navegación -->
+<nav class="navbar">
+    <div class="brand">HexaDesign</div>
+    <div class="nav-links">
+        <a href="#about">Sobre Nosotros</a>
+        <a href="#services">Servicios</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
     </div>
-    <div class="navbar-menu">
-        <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
-        <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
-        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
-    </div>
-</div>
+</nav>
 
-<!-- Portada Principal -->
+<!-- Sección Hero -->
 <div class="hero">
-    <h1>HexaDesign</h1>
-    <p>Explora nuestras soluciones creativas y proyectos innovadores en diseño industrial.</p>
-    <button class="cta-button">Contáctanos</button>
+    <h1>Bienvenido a HexaDesign</h1>
+    <p>Diseñamos y prototipamos soluciones innovadoras para la industria del mañana.</p>
+    <button>Conócenos</button>
 </div>
 
-<!-- Sección de Información destacada -->
-<div class="info-section fade-in">
-    <div class="info-box">
-        <h3>Compromiso</h3>
-        <p>Estamos comprometidos con la calidad y la satisfacción del cliente.</p>
+<!-- Sección de Video -->
+<div class="video-section">
+    <video autoplay muted loop>
+        <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay">
+        <h2>Una Nueva Era en el Diseño Industrial</h2>
     </div>
-    <div class="info-box">
-        <h3>Accesibilidad</h3>
-        <p>Soluciones accesibles para proyectos de cualquier escala.</p>
-    </div>
-    <div class="info-box">
-        <h3>Adaptabilidad</h3>
-        <p>Nos adaptamos a tus necesidades para obtener resultados óptimos.</p>
-    </div>
+</div>
+
+<!-- Sección de Información -->
+<div id="about" class="section">
+    <h2>Sobre Nosotros</h2>
+    <p>En HexaDesign, nos dedicamos a transformar ideas en realidad a través de diseños innovadores y prototipos eficientes.</p>
+</div>
+
+<!-- Sección de Servicios -->
+<div id="services" class="section">
+    <h2>Nuestros Servicios</h2>
+    <p>Ofrecemos diseño personalizado, consultoría integral, y prototipado rápido para proyectos de todas las escalas.</p>
 </div>
 
 <!-- Sección de Proyectos -->
-<div id="proyectos" class="projects-section scroll-animate">
-    <h2>Proyectos Destacados</h2>
-    <div class="projects-gallery">
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-            <h3>Proyecto 1</h3>
-        </div>
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-            <h3>Proyecto 2</h3>
-        </div>
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300" alt="Proyecto 3">
-            <h3>Proyecto 3</h3>
-        </div>
-    </div>
+<div id="projects" class="section">
+    <h2>Proyectos Recientes</h2>
+    <p>Descubre nuestros proyectos más destacados en diferentes industrias y sectores.</p>
 </div>
 
-<!-- Pie de página -->
-<footer>
+<!-- Pie de Página -->
+<footer class="footer">
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
 <script>
-    // Mostrar secciones al hacer scroll
-    document.addEventListener('scroll', () => {
-        const elements = document.querySelectorAll('.scroll-animate');
-        elements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                el.classList.add('visible');
-            }
-        });
-    });
-
-    // Cambiar color del menú al hacer scroll
-    window.addEventListener('scroll', () => {
+    // Cambiar color de la barra de navegación al hacer scroll
+    window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -370,21 +218,6 @@
             navbar.classList.remove('scrolled');
         }
     });
-
-    // Mostrar/ocultar menú de hamburguesa
-    function toggleMenu() {
-        const menu = document.querySelector('.navbar-menu');
-        menu.classList.toggle('active');
-    }
-
-    // Mostrar secciones seleccionadas
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-        document.getElementById(sectionId).classList.add('active');
-    }
 </script>
 </body>
 </html>
