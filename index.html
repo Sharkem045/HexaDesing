@@ -187,6 +187,32 @@
             margin-top: 50px;
         }
 
+        /* ===== Sección Adicional para Servicios ===== */
+        .services-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .services-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .service-item {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 15px auto;
+            width: 80%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+
         /* ===== Responsividad ===== */
         @media (max-width: 768px) {
             .navbar .nav-links {
@@ -270,28 +296,38 @@
     <p>Explora nuestros servicios de diseño y prototipado.</p>
 </div>
 
+<!-- ===== Sección de Servicios ===== -->
+<div class="services-section" id="servicios">
+    <h2>Servicios</h2>
+    <div class="service-item">
+        <h3>Diseño Personalizado</h3>
+        <p>Ofrecemos servicios de diseño ajustados a tus necesidades, desde concepto hasta implementación.</p>
+    </div>
+    <div class="service-item">
+        <h3>Prototipado Rápido</h3>
+        <p>Prototipado eficiente para validar ideas rápidamente y con calidad.</p>
+    </div>
+    <div class="service-item">
+        <h3>Consultoría</h3>
+        <p>Brindamos asesoría para optimizar procesos de diseño y manufactura, adaptados a tus objetivos.</p>
+    </div>
+</div>
+
 <!-- ===== Sección Acerca de Nosotros ===== -->
 <div class="about-section">
     <h2>Acerca de Nosotros</h2>
     <div class="about-item">
         <img src="https://github.com/user-attachments/assets/582d670d-8866-4ef9-8a31-478f863e27c7" alt="Dedicados">
         <div>
-            <h3>Dedicados</h3>
-            <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes. Nuestro equipo de expertos trabaja incansablemente para garantizar que cada proyecto sea un éxito.</p>
+            <h3>Dedicación</h3>
+            <p>Nos enfocamos en ofrecer soluciones de calidad y garantizar el éxito de cada proyecto.</p>
         </div>
     </div>
     <div class="about-item">
-        <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Bajo Costo">
+        <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Costo">
         <div>
-            <h3>Bajo Costo</h3>
-            <p>Ofrecemos piezas y modelos de alta calidad a precios competitivos, optimizando costos sin sacrificar calidad.</p>
-        </div>
-    </div>
-    <div class="about-item">
-        <img src="https://github.com/user-attachments/assets/2acba281-8e3c-4e4f-b706-0b4c9f647ff4" alt="Flexibilidad">
-        <div>
-            <h3>Flexibilidad</h3>
-            <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente, ya sea un diseño personalizado o un prototipo.</p>
+            <h3>Costos Competitivos</h3>
+            <p>Proporcionamos alta calidad a precios accesibles para nuestros clientes.</p>
         </div>
     </div>
 </div>
@@ -310,5 +346,6 @@
 
 </body>
 </html>
+
 
 
