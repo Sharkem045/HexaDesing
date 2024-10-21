@@ -15,24 +15,25 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
             box-sizing: border-box;
-            background-color: white; /* Fondo blanco */
-            color: black; /* Texto negro */
+            background-color: white;
+            color: black;
         }
 
         /* Estilo para la portada principal */
         .hero {
             background-image: url(https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046);
-            height: 100vh; /* Altura completa de la ventana */
-            background-size: cover; /* Cambiado a cover para cubrir toda el área */
+            height: auto;
+            background-size: cover;
             background-position: center;
-            background-repeat: no-repeat; /* Evitar que la imagen se repita */
+            background-repeat: no-repeat;
+            padding: 50px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white; /* Texto blanco sobre fondo */
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente para mejor legibilidad */
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .hero h1 {
@@ -50,10 +51,10 @@
         /* Menú en la parte superior */
         .navbar {
             display: flex;
-            justify-content: space-between; /* Espacio entre el nombre y los enlaces */
+            justify-content: space-between;
             align-items: center;
-            background-color: #222; /* Fondo negro para el menú */
-            padding: 10px 20px; /* Padding para el menú */
+            background-color: #222;
+            padding: 10px 20px;
             position: relative;
             z-index: 10;
         }
@@ -61,16 +62,16 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 15px; /* Espaciado horizontal entre los botones */
-            font-size: 1.25em; /* Tamaño de letra aumentado */
-            padding: 8px 15px; /* Padding ajustado para botones */
-            border-radius: 5px; /* Esquinas redondeadas */
-            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+            margin: 0 15px;
+            font-size: 1.25em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: black; /* Negro al pasar el ratón */
-            color: white; /* Texto blanco al pasar el ratón */
+            background-color: black;
+            color: white;
         }
 
         /* Secciones ocultas al inicio */
@@ -86,7 +87,7 @@
 
         .section-title {
             font-size: 2.5em;
-            color: black; /* Texto negro para títulos de sección */
+            color: black;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -94,9 +95,9 @@
         /* Galería de proyectos */
         .gallery {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
-            flex-wrap: wrap;
             padding: 20px;
         }
 
@@ -104,12 +105,12 @@
             max-width: 100%;
             border-radius: 10px;
             transition: transform 0.3s;
-            width: 300px; /* Ancho fijo para imágenes en computadoras */
-            height: auto; /* Mantener la relación de aspecto */
+            width: auto;
+            height: auto;
         }
 
         .gallery img:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+            transform: scale(1.05);
         }
 
         /* Sección de servicios con tres columnas */
@@ -121,7 +122,7 @@
         }
 
         .service-item {
-            background-color: #f5f5f5; /* Fondo gris claro */
+            background-color: #f5f5f5;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -129,18 +130,18 @@
         }
 
         .service-item:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .service-item h3 {
             font-size: 1.5em;
-            color: black; /* Texto negro para títulos de servicio */
+            color: black;
             margin-bottom: 10px;
         }
 
         .service-item p {
             font-size: 1em;
-            color: #555; /* Texto gris oscuro */
+            color: #555;
             line-height: 1.5;
         }
 
@@ -148,40 +149,42 @@
         .about-section {
             display: flex;
             flex-direction: column;
-            margin-top: 50px; /* Separación de la sección anterior */
+            margin-top: 50px;
             padding: 20px;
         }
 
         .about-item {
             display: flex;
-            align-items: center; /* Centra el contenido verticalmente */
-            margin-bottom: 30px; /* Espaciado entre bloques */
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            overflow: hidden; /* Evitar que el contenido sobresalga */
+            overflow: hidden;
             transition: transform 0.3s;
-            width: 80%; /* Ajusta el ancho total */
-            margin: 0 auto; /* Centra los bloques */
-        }
-
-        .about-item:hover {
-            transform: translateY(-5px); /* Levanta el bloque al pasar el ratón */
+            width: 100%;
+            margin: 0 auto;
         }
 
         .about-item img {
-            width: 40%; /* Ancho del 40% para la imagen */
-            height: auto; /* Mantiene la relación de aspecto */
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
         }
 
         .about-item div {
-            width: 60%; /* Ancho del 60% para el texto */
+            width: 100%;
             padding: 20px;
             text-align: left;
         }
 
+        .about-item:hover {
+            transform: translateY(-5px);
+        }
+
         /* Estilos para el pie de página */
         footer {
-            background-color: #222; /* Fondo negro para el pie de página */
+            background-color: #222;
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -191,158 +194,170 @@
         /* Responsividad */
         @media (max-width: 1200px) {
             .services {
-                grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
-            }
-            .gallery img {
-                width: 100%; /* Ancho completo en pantallas pequeñas */
-                max-width: 400px; /* Max ancho en pantallas más grandes */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
             .services {
-                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                font-size: 3em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
-            }
-
-            .hero p {
-                font-size: 1.2em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .navbar a {
-                padding: 6px 12px; /* Ajustar padding en móviles */
-                font-size: 1.5em; /* Ajustado para móviles */
+                margin: 5px 0;
+                font-size: 1.2em;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
             }
 
             .section-title {
-                font-size: 2em; /* Títulos más pequeños en móviles */
+                font-size: 2em;
             }
 
             .service-item h3 {
-                font-size: 1.25em; /* Títulos más pequeños en móviles */
+                font-size: 1.25em;
             }
 
             .service-item p {
-                font-size: 0.9em; /* Texto más pequeño en móviles */
+                font-size: 0.9em;
             }
 
-            .about-item img {
-                width: 50%; /* Ancho del 50% para móviles */
+            form input, form textarea, form button {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
             }
 
-            .about-item div {
-                width: 50%; /* Ancho del 50% para móviles */
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
-
-<!-- Menú de navegación -->
-<div class="navbar">
-    <a href="#" onclick="showSection('hero')">HexaDesign</a>
-    <div>
-        <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
-        <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
-        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
-    </div>
-</div>
-
-<!-- Portada Principal -->
-<div class="hero">
-    <h1>HexaDesign</h1>
-    <p>Explora nuestros servicios y proyectos de diseño</p>
-</div>
-
-<!-- Sección de Proyectos -->
-<div id="proyectos" class="section">
-    <h2 class="section-title">Nuestros Proyectos</h2>
-    <div class="gallery">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-        <img src="https://via.placeholder.com/300" alt="Proyecto 3">
-    </div>
-</div>
-
-<!-- Sección de Servicios -->
-<div id="servicios" class="section">
-    <h2 class="section-title">Servicios</h2>
-    <div class="services">
-        <div class="service-item">
-            <h3>Diseño</h3>
-            <p>Ofrecemos un servicio de diseño personalizado adaptado a tus necesidades.</p>
-        </div>
-        <div class="service-item">
-            <h3>Prototipado Rápido</h3>
-            <p>Prototipado rápido para validar tus ideas en poco tiempo.</p>
-        </div>
-        <div class="service-item">
-            <h3>Consultoría</h3>
-            <p>Asesoría especializada en procesos de diseño y fabricación.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Nueva sección sobre la empresa -->
-<div class="about-section">
-    <h2 class="section-title">Acerca de Nosotros</h2>
-
-    <!-- Primer bloque: Dedicados -->
-    <div class="about-item">
-        <img src="https://github.com/user-attachments/assets/582d670d-8866-4ef9-8a31-478f863e27c7" alt="Dedicados">
+    <!-- Menú de navegación -->
+    <div class="navbar">
+        <a href="#" onclick="showSection('hero')">HexaDesign</a>
         <div>
-            <h3>Dedicados</h3>
-            <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes. Nuestro equipo de expertos trabaja incansablemente para garantizar que cada proyecto sea un éxito.</p>
+            <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
+            <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+            <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
         </div>
     </div>
 
-    <!-- Segundo bloque: Bajo Costo -->
-    <div class="about-item">
-        <div>
-            <h3>Bajo Costo</h3>
-            <p>Nuestro compromizo con nuestros clientes es ofrecer piezas y modelos de alta calidad a precios competitivos. Creemos que un excelente diseño no debería romper el banco, y trabajamos para optimizar costos sin sacrificar calidad.</p>
-        </div>
-        <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Bajo Costo">
+    <!-- Portada Principal -->
+    <div class="hero">
+        <h1>HexaDesign</h1>
+        <p>Explora nuestros servicios y proyectos de diseño</p>
     </div>
 
-    <!-- Tercer bloque: Flexibilidad -->
-    <div class="about-item">
-        <img src="https://github.com/user-attachments/assets/2acba281-8e3c-4e4f-b706-0b4c9f647ff4" alt="Flexibilidad">
-        <div>
-            <h3>Flexibilidad</h3>
-            <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente. Ya sea que necesites un diseño personalizado o un prototipo, estamos aquí para ajustar nuestros procesos a tus requerimientos.</p>
+    <!-- Sección de Proyectos -->
+    <div id="proyectos" class="section">
+        <h2 class="section-title">Nuestros Proyectos</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 3">
         </div>
     </div>
-</div>
 
-<!-- Sección de Contacto -->
-<div id="contacto" class="section">
-    <h2 class="section-title">Contacto</h2>
-    <p>Si tienes preguntas o deseas más información, no dudes en contactarnos.</p>
-    <form>
-        <input type="text" placeholder="Nombre" required><br>
-        <input type="email" placeholder="Email" required><br>
-        <textarea placeholder="Mensaje" required></textarea><br>
-        <button type="submit">Enviar</button>
-    </form>
-</div>
+    <!-- Sección de Servicios -->
+    <div id="servicios" class="section">
+        <h2 class="section-title">Servicios</h2>
+        <div class="services">
+            <div class="service-item">
+                <h3>Diseño</h3>
+                <p>Ofrecemos un servicio de diseño personalizado adaptado a tus necesidades.</p>
+            </div>
+            <div class="service-item">
+                <h3>Prototipado Rápido</h3>
+                <p>Prototipado rápido para validar tus ideas en poco tiempo.</p>
+            </div>
+            <div class="service-item">
+                <h3>Consultoría</h3>
+                <p>Asesoría especializada en procesos de diseño y fabricación.</p>
+            </div>
+        </div>
+    </div>
 
-<!-- Pie de página -->
-<footer>
-    <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
-</footer>
+    <!-- Nueva sección sobre la empresa -->
+    <div class="about-section">
+        <h2 class="section-title">Acerca de Nosotros</h2>
 
-<script>
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.remove('active'); // Ocultar todas las secciones
-        });
-        document.getElementById(sectionId).classList.add('active'); // Mostrar la sección seleccionada
-    }
-</script>
+        <!-- Primer bloque: Dedicados -->
+        <div class="about-item">
+            <img src="https://github.com/user-attachments/assets/582d670d-8866-4ef9-8a31-478f863e27c7" alt="Dedicados">
+            <div>
+                <h3>Dedicados</h3>
+                <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes. Nuestro equipo de expertos trabaja incansablemente para garantizar que cada proyecto sea un éxito.</p>
+            </div>
+        </div>
+
+        <!-- Segundo bloque: Bajo Costo -->
+        <div class="about-item">
+            <div>
+                <h3>Bajo Costo</h3>
+                <p>Nuestro compromizo con nuestros clientes es ofrecer piezas y modelos de alta calidad a precios competitivos. Creemos que un excelente diseño no debería romper el banco, y trabajamos para optimizar costos sin sacrificar calidad.</p>
+            </div>
+            <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Bajo Costo">
+        </div>
+
+        <!-- Tercer bloque: Flexibilidad -->
+        <div class="about-item">
+            <img src="https://github.com/user-attachments/assets/2acba281-8e3c-4e4f-b706-0b4c9f647ff4" alt="Flexibilidad">
+            <div>
+                <h3>Flexibilidad</h3>
+                <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente. Ya sea que necesites un diseño personalizado o un prototipo, estamos aquí para ajustar nuestros procesos a tus requerimientos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div id="contacto" class="section">
+        <h2 class="section-title">Contacto</h2>
+        <p>Si tienes preguntas o deseas más información, no dudes en contactarnos.</p>
+        <form>
+            <input type="text" placeholder="Nombre" required><br>
+            <input type="email" placeholder="Email" required><br>
+            <textarea placeholder="Mensaje" required></textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
+
