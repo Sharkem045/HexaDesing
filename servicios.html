@@ -5,7 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Servicios Ofrecidos">
     <title>Servicios - HexaDesign</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos generales */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            background-color: white; /* Fondo blanco */
+            color: black; /* Texto negro */
+        }
+
+        /* Menú en la parte superior */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Espacio entre el nombre y los enlaces */
+            align-items: center;
+            background-color: #222; /* Fondo negro para el menú */
+            padding: 10px 20px; /* Padding para el menú */
+            position: relative;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px; /* Espaciado horizontal entre los botones */
+            font-size: 1.25em; /* Tamaño de letra aumentado */
+            padding: 8px 15px; /* Padding ajustado para botones */
+            border-radius: 5px; /* Esquinas redondeadas */
+            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+        }
+
+        .navbar a:hover {
+            background-color: black; /* Negro al pasar el ratón */
+            color: white; /* Texto blanco al pasar el ratón */
+        }
+
+        /* Sección de Servicios */
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: black; /* Texto negro para títulos de sección */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Servicios en cuadrículas */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .service-item {
+            background-color: #f5f5f5; /* Fondo gris claro */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .service-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+            transform: translateY(-5px); /* Levanta el bloque al pasar el ratón */
+        }
+
+        .service-item h3 {
+            font-size: 1.5em;
+            color: black; /* Texto negro para títulos de servicio */
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1em;
+            color: #555; /* Texto gris oscuro */
+            line-height: 1.5;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #222; /* Fondo negro para el pie de página */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2em; /* Títulos más pequeños en móviles */
+            }
+
+            .navbar a {
+                padding: 6px 12px; /* Ajustar padding en móviles */
+                font-size: 1.5em; /* Ajustado para móviles */
+            }
+
+            .service-item h3 {
+                font-size: 1.25em; /* Títulos más pequeños en móviles */
+            }
+
+            .service-item p {
+                font-size: 0.9em; /* Texto más pequeño en móviles */
+            }
+        }
+    </style>
 </head>
 <body>
 <!-- Menú de navegación -->
@@ -19,7 +134,7 @@
 </div>
 
 <!-- Sección de Servicios -->
-<div id="servicios" class="section active">
+<div id="servicios" class="section">
     <h2 class="section-title">Servicios Ofrecidos</h2>
     <div class="services">
         <div class="service-item">
@@ -34,7 +149,18 @@
             <h3>Impresión 3D</h3>
             <p>Servicios de impresión 3D para dar vida a tus proyectos.</p>
         </div>
-        <!-- Add more services as needed -->
+        <div class="service-item">
+            <h3>Fabricación en Serie</h3>
+            <p>Producción a gran escala de componentes y productos terminados.</p>
+        </div>
+        <div class="service-item">
+            <h3>Desarrollo de Productos</h3>
+            <p>Diseño y desarrollo integral de nuevos productos desde la idea hasta el producto final.</p>
+        </div>
+        <div class="service-item">
+            <h3>Modelado CAD</h3>
+            <p>Creación de modelos tridimensionales detallados para proyectos de diseño y fabricación.</p>
+        </div>
     </div>
 </div>
 
@@ -42,5 +168,6 @@
 <footer>
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
+
 </body>
 </html>
