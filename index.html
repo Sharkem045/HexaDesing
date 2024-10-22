@@ -21,7 +21,7 @@
 
         /* Estilo para la portada principal */
         .hero {
-            background-image: url(https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046);
+            background-image: url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
             height: 100vh; /* Altura completa de la ventana */
             background-size: cover; /* Cambiado a cover para cubrir toda el área */
             background-position: center;
@@ -315,80 +315,12 @@
 
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
-    body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
-        input, textarea, button {
-            margin-bottom: 10px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+    <h2 class="section-title">Contacto</h2>
     <form id="contactForm">
         <input type="text" id="name" placeholder="Nombre" required>
         <input type="email" id="email" placeholder="Correo Electrónico" required>
         <textarea id="message" placeholder="Mensaje" required></textarea>
         <button type="submit">Enviar</button>
-    </form>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            fetch('https://your-backend-service.com/sendEmail', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: message
-                })
-            }).then(response => {
-                if (response.ok) {
-                    alert('Email sent successfully!');
-                } else {
-                    alert('There was an error sending the email.');
-                }
-            }).catch(error => {
-                console.error('Error:', error);
-                alert('There was an error sending the email.');
-            });
-        });
     </form>
 </div>
 
@@ -417,9 +349,39 @@
     document.addEventListener("DOMContentLoaded", () => {
         showSection('hero'); // Muestra la portada principal al cargar
     });
+
+    // Formulario de contacto
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        fetch('https://your-backend-service.com/sendEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                to: 'HexaDegins@outlook.com',
+                name: name,
+                email: email,
+                message: message
+            })
+        }).then(response => {
+            if (response.ok) {
+                alert('Email sent successfully!');
+            } else {
+                alert('There was an error sending the email.');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert('There was an error sending the email.');
+        });
+    });
 </script>
 
 </body>
 </html>
-
 
