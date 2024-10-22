@@ -73,6 +73,35 @@
             color: white; /* Texto blanco al pasar el ratón */
         }
 
+        /* Hamburger menu para móviles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+            transition: 0.4s;
+        }
+
+        .navbar-responsive {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #222;
+        }
+
+        .navbar-responsive a {
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
         /* Secciones ocultas al inicio */
         .section {
             display: none;
@@ -236,6 +265,18 @@
             .about-item div {
                 width: 50%; /* Ancho del 50% para móviles */
             }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar div {
+                display: none;
+            }
+
+            .navbar-responsive {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -249,6 +290,17 @@
         <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
         <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
     </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="navbar-responsive" id="navbarResponsive">
+    <a href="#" onclick="showSection('hero')">HexaDesign</a>
+    <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
+    <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+    <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
 </div>
 
 <!-- Portada Principal -->
@@ -343,6 +395,9 @@
         if (activeSection) {
             activeSection.classList.add('active');
         }
+
+        // Cierra el menú en móviles
+        toggleMenu();
     }
 
     // Muestra la sección de proyectos al cargar
@@ -380,8 +435,13 @@
             alert('There was an error sending the email.');
         });
     });
+
+    // Función para toggle del menú en móviles
+    function toggleMenu() {
+        const navbarResponsive = document.getElementById('navbarResponsive');
+        navbarResponsive.style.display = navbarResponsive.style.display === 'flex' ? 'none' : 'flex';
+    }
 </script>
 
 </body>
 </html>
-
