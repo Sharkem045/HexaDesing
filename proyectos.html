@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Diseño y Prototipado">
-    <title>HexaDesign</title>
+    <title>HexaDesign - Proyectos</title>
     <style>
         /* Estilos generales */
         body, html {
@@ -15,36 +15,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
             box-sizing: border-box;
-            background-color: white; /* Fondo blanco */
-            color: black; /* Texto negro */
-        }
-
-        /* Estilo para la portada principal */
-        .hero {
-            background-image: url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
-            height: 100vh; /* Altura completa de la ventana */
-            background-size: cover; /* Cambiado a cover para cubrir toda el área */
-            background-position: center;
-            background-repeat: no-repeat; /* Evitar que la imagen se repita */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white; /* Texto blanco sobre fondo */
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente para mejor legibilidad */
-        }
-
-        .hero h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 40px;
+            background-color: #f2f2f2; /* Fondo blanco */
+            color: #333; /* Texto negro */
         }
 
         /* Menú en la parte superior */
@@ -69,26 +41,8 @@
         }
 
         .navbar a:hover {
-            background-color: black; /* Negro al pasar el ratón */
+            background-color: green; /* Verde al pasar el ratón */
             color: white; /* Texto blanco al pasar el ratón */
-        }
-
-        /* Secciones ocultas al inicio */
-        .section {
-            display: none;
-            padding: 50px;
-            text-align: center;
-        }
-
-        .active {
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.5em;
-            color: black; /* Texto negro para títulos de sección */
-            margin-bottom: 20px;
-            text-transform: uppercase;
         }
 
         /* Galería de proyectos */
@@ -97,89 +51,46 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            padding: 20px;
+            padding: 50px;
+            background-color: #fff; /* Fondo blanco para la galería */
         }
 
-        .gallery img {
-            max-width: 100%;
+        .gallery-item {
+            background-color: #333; /* Fondo negro para items de la galería */
             border-radius: 10px;
-            transition: transform 0.3s;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
             width: 300px; /* Ancho fijo para imágenes en computadoras */
-            height: auto; /* Mantener la relación de aspecto */
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
-        }
-
-        /* Sección de servicios con tres columnas */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .service-item {
-            background-color: #f5f5f5; /* Fondo gris claro */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-        }
-
-        .service-item:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
-        }
-
-        .service-item h3 {
-            font-size: 1.5em;
-            color: black; /* Texto negro para títulos de servicio */
-            margin-bottom: 10px;
-        }
-
-        .service-item p {
-            font-size: 1em;
-            color: #555; /* Texto gris oscuro */
-            line-height: 1.5;
-        }
-
-        /* Nueva sección sobre la empresa */
-        .about-section {
+            height: 400px; /* Altura fija para imágenes en computadoras */
             display: flex;
             flex-direction: column;
-            margin-top: 50px; /* Separación de la sección anterior */
-            padding: 20px;
+            align-items: center;
+            justify-content: center;
         }
 
-        .about-item {
-            display: flex;
-            align-items: center; /* Centra el contenido verticalmente */
-            margin-bottom: 30px; /* Espaciado entre bloques */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            overflow: hidden; /* Evitar que el contenido sobresalga */
-            transition: transform 0.3s;
-            width: 80%; /* Ajusta el ancho total */
-            margin: 0 auto; /* Centra los bloques */
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 60%; /* Máxima altura para la imagen */
+            border-bottom: 3px solid green; /* Borde inferior verde */
         }
 
-        .about-item:hover {
-            transform: translateY(-5px); /* Levanta el bloque al pasar el ratón */
+        .gallery-item:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .about-item img {
-            width: 40%; /* Ancho del 40% para la imagen */
-            height: auto; /* Mantiene la relación de aspecto */
+        .gallery-item h3 {
+            color: green; /* Título verde */
+            margin: 10px 0;
         }
 
-        .about-item div {
-            width: 60%; /* Ancho del 60% para el texto */
-            padding: 20px;
-            text-align: left;
+        .gallery-item p {
+            color: white; /* Descripción blanca */
+            padding: 0 15px;
+            text-align: center;
         }
 
-        /* Estilos para el pie de página */
+        /* Pie de página */
         footer {
             background-color: #222; /* Fondo negro para el pie de página */
             color: white;
@@ -188,85 +99,28 @@
             margin-top: 50px;
         }
 
-        /* Estilos para el formulario de contacto */
-        #contactForm {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5; /* Fondo gris claro */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        #contactForm input, #contactForm textarea, #contactForm button {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-
-        #contactForm button {
-            background-color: #222;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #contactForm button:hover {
-            background-color: black;
-        }
-
         /* Responsividad */
         @media (max-width: 1200px) {
-            .services {
-                grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
-            }
-            .gallery img {
-                width: 100%; /* Ancho completo en pantallas pequeñas */
-                max-width: 400px; /* Max ancho en pantallas más grandes */
+            .gallery-item {
+                width: 100%; /* Ancho completo en pantallas más pequeñas */
+                max-width: 400px; /* Máximo ancho en pantallas más grandes */
             }
         }
 
         @media (max-width: 768px) {
-            .services {
-                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-            }
-
-            .hero h1 {
-                font-size: 3em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
-            }
-
-            .hero p {
-                font-size: 1.2em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
-            }
-
             .navbar a {
                 padding: 6px 12px; /* Ajustar padding en móviles */
                 font-size: 1.5em; /* Ajustado para móviles */
             }
 
-            .section-title {
-                font-size: 2em; /* Títulos más pequeños en móviles */
+            .gallery-item {
+                width: 100%; /* Ancho completo en móviles */
+                max-width: 350px; /* Máximo ancho en móviles */
+                height: auto; /* Altura automática en móviles */
             }
 
-            .service-item h3 {
-                font-size: 1.25em; /* Títulos más pequeños en móviles */
-            }
-
-            .service-item p {
-                font-size: 0.9em; /* Texto más pequeño en móviles */
-            }
-
-            .about-item img {
-                width: 50%; /* Ancho del 50% para móviles */
-            }
-
-            .about-item div {
-                width: 50%; /* Ancho del 50% para móviles */
+            .gallery-item img {
+                max-height: 50%; /* Máxima altura para la imagen en móviles */
             }
         }
     </style>
@@ -283,10 +137,24 @@
     </div>
 </div>
 
-<!-- Portada Principal -->
-<div class="hero">
-    <h1>HexaDesign</h1>
-    <p>Explora nuestros servicios y proyectos de diseño</p>
+<!-- Galería de Proyectos -->
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="path/to/art1.jpg" alt="Arte 1">
+        <h3>Obra de Arte 1</h3>
+        <p>Descripción breve de la obra de arte 1.</p>
+    </div>
+    <div class="gallery-item">
+        <img src="path/to/art2.jpg" alt="Arte 2">
+        <h3>Obra de Arte 2</h3>
+        <p>Descripción breve de la obra de arte 2.</p>
+    </div>
+    <div class="gallery-item">
+        <img src="path/to/art3.jpg" alt="Arte 3">
+        <h3>Obra de Arte 3</h3>
+        <p>Descripción breve de la obra de arte 3.</p>
+    </div>
+    <!-- Agregar más elementos de galería según sea necesario -->
 </div>
 
 <!-- Pie de página -->
@@ -294,24 +162,8 @@
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("link-proyectos").addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "proyectos.html";
-    });
-
-    document.getElementById("link-servicios").addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "servicios.html";
-    });
-
-    document.getElementById("link-contacto").addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "contacto.html";
-    });
-});
-</script>
+</body>
+</html>
 
 </body>
 </html>
