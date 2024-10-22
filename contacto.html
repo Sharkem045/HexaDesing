@@ -5,7 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Contáctanos">
     <title>Contacto - HexaDesign</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos generales */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            background-color: white; /* Fondo blanco */
+            color: black; /* Texto negro */
+        }
+
+        /* Menú en la parte superior */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Espacio entre el nombre y los enlaces */
+            align-items: center;
+            background-color: #222; /* Fondo negro para el menú */
+            padding: 10px 20px; /* Padding para el menú */
+            position: relative;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px; /* Espaciado horizontal entre los botones */
+            font-size: 1.25em; /* Tamaño de letra aumentado */
+            padding: 8px 15px; /* Padding ajustado para botones */
+            border-radius: 5px; /* Esquinas redondeadas */
+            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+        }
+
+        .navbar a:hover {
+            background-color: black; /* Negro al pasar el ratón */
+            color: white; /* Texto blanco al pasar el ratón */
+        }
+
+        /* Sección de Contacto */
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: black; /* Texto negro para títulos de sección */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Formulario de contacto en cuadrícula */
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5; /* Fondo gris claro */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input, .contact-form textarea, .contact-form button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        .contact-form button {
+            background-color: #222;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: black;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #222; /* Fondo negro para el pie de página */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2em; /* Títulos más pequeños en móviles */
+            }
+
+            .navbar a {
+                padding: 6px 12px; /* Ajustar padding en móviles */
+                font-size: 1.5em; /* Ajustado para móviles */
+            }
+        }
+    </style>
 </head>
 <body>
 <!-- Menú de navegación -->
@@ -21,7 +128,7 @@
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
     <h2 class="section-title">Contacto</h2>
-    <form id="contactForm">
+    <form id="contactForm" class="contact-form">
         <input type="text" id="name" placeholder="Nombre" required>
         <input type="email" id="email" placeholder="Correo Electrónico" required>
         <input type="text" id="phone" placeholder="Teléfono" required>
