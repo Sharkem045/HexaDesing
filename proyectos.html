@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HexaDesign - Contáctanos">
-    <title>Contacto - HexaDesign</title>
+    <meta name="description" content="HexaDesign - Nuestros Proyectos">
+    <title>Proyectos - HexaDesign</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos generales */
         body, html {
@@ -45,7 +46,7 @@
             color: white; /* Texto blanco al pasar el ratón */
         }
 
-        /* Sección de Contacto */
+        /* Sección de Proyectos */
         .section {
             padding: 50px;
             text-align: center;
@@ -58,38 +59,38 @@
             text-transform: uppercase;
         }
 
-        /* Formulario de contacto en cuadrícula */
-        .contact-form {
+        /* Galería de Proyectos en cuadrículas */
+        .gallery {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            max-width: 100%; /* Asegura que el formulario ocupe el ancho completo en móviles */
-            margin: 0 auto;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste automático de columnas */
+            gap: 20px; /* Separación entre ítems */
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
             background-color: #f5f5f5; /* Fondo gris claro */
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
         }
 
-        .contact-form input, .contact-form textarea, .contact-form button {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
+        .gallery-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+            transform: translateY(-5px); /* Levanta el bloque al pasar el ratón */
+        }
+
+        .gallery-item img {
+            max-width: 100%;
             border-radius: 5px;
-            box-sizing: border-box;
+        }
+
+        .gallery-item p {
             font-size: 1em;
-        }
-
-        .contact-form button {
-            background-color: #222;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .contact-form button:hover {
-            background-color: black;
+            color: #555; /* Texto gris oscuro */
+            line-height: 1.5;
+            margin-top: 10px;
         }
 
         /* Estilos para el pie de página */
@@ -109,15 +110,34 @@
 
             .navbar a {
                 padding: 6px 12px; /* Ajustar padding en móviles */
-                font-size: 1.5em; /* Ajustado para móviles */
+                font-size: 1.25em; /* Ajustado para móviles */
             }
 
-            .contact-form {
-                padding: 10px; /* Ajustar padding en móviles */
+            .gallery-item {
+                padding: 15px; /* Padding ajustado para móviles */
             }
 
-            .contact-form input, .contact-form textarea, .contact-form button {
+            .gallery-item p {
                 font-size: 0.9em; /* Texto más pequeño en móviles */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar a {
+                font-size: 1em; /* Tamaño de letra aún más pequeño en pantallas muy pequeñas */
+                padding: 5px 10px; /* Padding ajustado */
+            }
+
+            .section {
+                padding: 30px 10px; /* Padding ajustado para pantallas pequeñas */
+            }
+
+            .section-title {
+                font-size: 1.75em; /* Tamaño de título ajustado para pantallas pequeñas */
+            }
+
+            .gallery-item p {
+                font-size: 0.8em; /* Tamaño de texto ajustado para pantallas pequeñas */
             }
         }
     </style>
@@ -133,94 +153,32 @@
     </div>
 </div>
 
-<!-- Sección de Contacto -->
-<div id="contacto" class="section">
-    <h2 class="section-title">Contacto</h2>
-    <form id="contactForm" class="contact-form">
-        <input type="text" id="name" placeholder="Nombre" required>
-        <input type="email" id="email" placeholder="Correo Electrónico" required>
-        <input type="text" id="phone" placeholder="Teléfono" required>
-        <input type="text" id="subject" placeholder="Asunto" required>
-        <textarea id="message" placeholder="Mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-    <div id="formMessage" style="display: none;"></div>
+<!-- Sección de Proyectos -->
+<div id="proyectos" class="section active">
+    <h2 class="section-title">Nuestros Proyectos</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+            <p class="gallery-description">Descripción del Proyecto 1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+            <p class="gallery-description">Descripción del Proyecto 2</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 3">
+            <p class="gallery-description">Descripción del Proyecto 3</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Proyecto 4">
+            <p class="gallery-description">Descripción del Proyecto 4</p>
+        </div>
+    </div>
 </div>
 
 <!-- Pie de página -->
 <footer>
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
-
-<script>
-    // Función para mostrar secciones
-    function showSection(sectionId) {
-        // Oculta todas las secciones
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Muestra la sección seleccionada
-        const activeSection = document.getElementById(sectionId);
-        if (activeSection) {
-            activeSection.classList.add('active');
-        }
-    }
-
-    // Muestra la sección de proyectos al cargar
-    document.addEventListener("DOMContentLoaded", () => {
-        showSection('hero'); // Muestra la portada principal al cargar
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        const formMessage = document.getElementById('formMessage');
-
-        // Simple form validation
-        if (!name || !email || !phone || !subject || !message) {
-            formMessage.style.display = 'block';
-            formMessage.innerText = 'Por favor, complete todos los campos.';
-            formMessage.style.color = 'red';
-            return;
-        }
-
-        fetch('https://your-backend-service.com/sendEmail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                to: 'HexaDegins@outlook.com',
-                name: name,
-                email: email,
-                phone: phone,
-                subject: subject,
-                message: message
-            })
-        }).then(response => {
-            if (response.ok) {
-                formMessage.style.display = 'block';
-                formMessage.innerText = '¡Correo enviado exitosamente!';
-                formMessage.style.color = 'green';
-            } else {
-                formMessage.style.display = 'block';
-                formMessage.innerText = 'Hubo un error al enviar el correo.';
-                formMessage.style.color = 'red';
-            }
-        }).catch(error => {
-            console.error('Error:', error);
-            formMessage.style.display = 'block';
-            formMessage.innerText = 'Hubo un error al enviar el correo.';
-            formMessage.style.color = 'red';
-        });
-    });
-</script>
 </body>
 </html>
