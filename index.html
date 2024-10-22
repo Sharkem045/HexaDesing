@@ -164,18 +164,12 @@
             margin: 0 auto; /* Centra los bloques */
         }
 
-        /* Estilo específico para la tercera imagen */
-        .about-item:nth-of-type(3) img {
-            width: 30%; /* Reducir el tamaño de la tercera imagen */
-            height: auto;
-        }
-
         .about-item:hover {
             transform: translateY(-5px); /* Levanta el bloque al pasar el ratón */
         }
 
         .about-item img {
-            width: 40%; /* Ancho del 40% para las otras imágenes */
+            width: 40%; /* Ancho del 40% para la imagen */
             height: auto; /* Mantiene la relación de aspecto */
         }
 
@@ -246,8 +240,110 @@
     </style>
 </head>
 <body>
-<!-- CONTENIDO OMITIDO -->
+
+<!-- Menú de navegación -->
+<div class="navbar">
+    <a href="#" onclick="showSection('hero')">HexaDesign</a>
+    <div>
+        <a href="#proyectos" onclick="showSection('proyectos')">Proyectos</a>
+        <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
+    </div>
+</div>
+
+<!-- Portada Principal -->
+<div class="hero">
+    <h1>HexaDesign</h1>
+    <p>Explora nuestros servicios y proyectos de diseño</p>
+</div>
+
+<!-- Sección de Proyectos -->
+<div id="proyectos" class="section">
+    <h2 class="section-title">Nuestros Proyectos</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 1">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 2">
+        <img src="https://via.placeholder.com/300" alt="Proyecto 3">
+    </div>
+</div>
+
+<!-- Sección de Servicios -->
+<div id="servicios" class="section">
+    <h2 class="section-title">Servicios</h2>
+    <div class="services">
+        <div class="service-item">
+            <h3>Diseño</h3>
+            <p>Ofrecemos un servicio de diseño personalizado adaptado a tus necesidades.</p>
+        </div>
+        <div class="service-item">
+            <h3>Prototipado Rápido</h3>
+            <p>Prototipado rápido para validar tus ideas en poco tiempo.</p>
+        </div>
+        <div class="service-item">
+            <h3>Consultoría</h3>
+            <p>Asesoría especializada en procesos de diseño y fabricación.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Nueva sección sobre la empresa -->
+<div class="about-section">
+    <h2 class="section-title">Acerca de Nosotros</h2>
+
+    <!-- Primer bloque: Dedicados -->
+    <div class="about-item">
+        <img src="https://github.com/user-attachments/assets/582d670d-8866-4ef9-8a31-478f863e27c7" alt="Dedicados">
+        <div>
+            <h3>Dedicados</h3>
+            <p>En HexaDesign, nos dedicamos a proporcionar soluciones de diseño que se adaptan a las necesidades de nuestros clientes. Nuestro equipo de expertos trabaja incansablemente para garantizar que cada proyecto sea un éxito.</p>
+        </div>
+    </div>
+
+    <!-- Segundo bloque: Bajo Costo -->
+    <div class="about-item">
+        <div>
+            <h3>Bajo Costo</h3>
+            <p>Nuestro compromizo con nuestros clientes es ofrecer piezas y modelos de alta calidad a precios competitivos. Creemos que un excelente diseño no debería romper el banco, y trabajamos para optimizar costos sin sacrificar calidad.</p>
+        </div>
+        <img src="https://github.com/user-attachments/assets/9dcbf057-16ae-46bb-89ba-c8ef25c12012" alt="Bajo Costo">
+    </div>
+
+    <!-- Tercer bloque: Flexibilidad -->
+    <div class="about-item">
+        <img src="https://github.com/user-attachments/assets/2acba281-8e3c-4e4f-b706-0b4c9f647ff4" alt="Flexibilidad">
+        <div>
+            <h3>Flexibilidad</h3>
+            <p>Adaptamos nuestros servicios a las demandas específicas de cada cliente. Ya sea que necesites un diseño personalizado o un prototipo, estamos aquí para ajustar nuestros procesos a tus requerimientos.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de Contacto -->
+<div id="contacto" class="section">
+    <h2 class="section-title">Contacto</h2>
+    <p>Si tienes preguntas o deseas más información, no dudes en contactarnos.</p>
+    <form>
+        <input type="text" placeholder="Nombre" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <textarea placeholder="Mensaje" required></textarea><br>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+<!-- Pie de página -->
+<footer>
+    <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active'); // Ocultar todas las secciones
+        });
+        document.getElementById(sectionId).classList.add('active'); // Mostrar la sección seleccionada
+    }
+</script>
 </body>
 </html>
-
 
