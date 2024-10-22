@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HexaDesign - Contáctanos">
+    <title>Contacto - HexaDesign</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Menú de navegación -->
+<div class="navbar">
+    <a href="index.html">HexaDesign</a>
+    <div>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+</div>
+
+<!-- Sección de Contacto -->
+<div id="contacto" class="section active">
+    <h2 class="section-title">Contacto</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Nombre" required>
+        <input type="email" id="email" placeholder="Correo Electrónico" required>
+        <textarea id="message" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="formMessage" style="display: none;"></div>
+</div>
+
+<!-- Pie de página -->
+<footer>
+    <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const formMessage = document.getElementById('formMessage');
+
+        // Simple form validation
+        if (!name || !email || !message) {
+            formMessage.style.display = 'block';
+            formMessage.innerText = 'Por favor, complete todos los campos.';
+            formMessage.style.color = 'red';
+            return;
+        }
+
+        fetch('https://your-backend-service.com/sendEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                to: 'HexaDegins@outlook.com',
+                name: name,
+                email: email,
+                message: message
+            })
+        }).then(response => {
+            if (response.ok) {
+                formMessage.style.display = 'block';
+                formMessage.innerText = '¡Correo enviado exitosamente!';
+                formMessage.style.color = 'green';
+            } else {
+                formMessage.style.display = 'block';
+                formMessage.innerText = 'Hubo un error al enviar el correo.';
+                formMessage.style.color = 'red';
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            formMessage.style.display = 'block';
+            formMessage.innerText = 'Hubo un error al enviar el correo.';
+            formMessage.style.color = 'red';
+        });
+    });
+</script>
+</body>
+</html>
