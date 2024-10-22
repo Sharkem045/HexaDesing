@@ -109,7 +109,7 @@
 
             .navbar a {
                 padding: 6px 12px; /* Ajustar padding en móviles */
-                font-size: 1.5em; /* Ajustado para móviles */
+                font-size: 1.25em; /* Ajustado para móviles */
             }
 
             .service-item h3 {
@@ -118,6 +118,38 @@
 
             .service-item p {
                 font-size: 0.9em; /* Texto más pequeño en móviles */
+            }
+
+            .services {
+                grid-template-columns: 1fr; /* Una columna en móviles */
+                gap: 20px; /* Ajustar espacio entre elementos en móviles */
+            }
+
+            .service-item {
+                padding: 15px; /* Padding ajustado para móviles */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar a {
+                font-size: 1em; /* Tamaño de letra aún más pequeño en pantallas muy pequeñas */
+                padding: 5px 10px; /* Padding ajustado */
+            }
+
+            .section {
+                padding: 30px 10px; /* Padding ajustado para pantallas pequeñas */
+            }
+
+            .section-title {
+                font-size: 1.75em; /* Tamaño de título ajustado para pantallas pequeñas */
+            }
+
+            .service-item h3 {
+                font-size: 1.1em; /* Tamaño de título ajustado para pantallas pequeñas */
+            }
+
+            .service-item p {
+                font-size: 0.8em; /* Tamaño de texto ajustado para pantallas pequeñas */
             }
         }
     </style>
