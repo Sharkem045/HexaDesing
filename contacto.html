@@ -92,6 +92,12 @@
             background-color: black;
         }
 
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            resize: vertical; /* Allow textarea to be resized vertically */
+        }
+
         /* Estilos para el pie de página */
         footer {
             background-color: #222; /* Fondo negro para el pie de página */
@@ -128,12 +134,12 @@
 <!-- Sección de Contacto -->
 <div id="contacto" class="section">
     <h2 class="section-title">Contacto</h2>
-    <form id="contactForm" class="contact-form">
-        <input type="text" id="name" placeholder="Nombre" required>
-        <input type="email" id="email" placeholder="Correo Electrónico" required>
-        <input type="text" id="phone" placeholder="Teléfono" required>
-        <input type="text" id="subject" placeholder="Asunto" required>
-        <textarea id="message" placeholder="Mensaje" required></textarea>
+    <form id="contactForm" class="contact-form" novalidate>
+        <input type="text" id="name" name="name" placeholder="Nombre" required>
+        <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+        <input type="text" id="phone" name="phone" placeholder="Teléfono" required>
+        <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+        <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
         <button type="submit">Enviar</button>
     </form>
     <div id="formMessage" style="display: none;"></div>
@@ -145,26 +151,6 @@
 </footer>
 
 <script>
-    // Función para mostrar secciones
-    function showSection(sectionId) {
-        // Oculta todas las secciones
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Muestra la sección seleccionada
-        const activeSection = document.getElementById(sectionId);
-        if (activeSection) {
-            activeSection.classList.add('active');
-        }
-    }
-
-    // Muestra la sección de proyectos al cargar
-    document.addEventListener("DOMContentLoaded", () => {
-        showSection('hero'); // Muestra la portada principal al cargar
-    });
-
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -183,13 +169,12 @@
             return;
         }
 
-        fetch('https://hexadesing.com/ventas@hexadesing.com', {
+        fetch('https://hexadesing.com/ventas@hexadesing.com', { // Updated endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                to: 'HexaDegins@outlook.com',
                 name: name,
                 email: email,
                 phone: phone,
@@ -212,6 +197,50 @@
             formMessage.innerText = 'Hubo un error al enviar el correo.';
             formMessage.style.color = 'red';
         });
+    });
+
+    // Embedded Node.js backend script (for demonstration purposes)
+    // In a real-world scenario, this should be a separate server file
+    const express = require('express');
+    const nodemailer = require('nodemailer');
+    const bodyParser = require('body-parser');
+
+    const app = express();
+    const port = process.env.PORT || 3000;
+
+    app.use(bodyParser.json());
+
+    app.post('/send-email', (req, res) => {
+        const { name, email, phone, subject, message } = req.body;
+
+        // Create a transporter object
+        const transporter = nodemailer.createTransport({
+            service: 'gmail', // e.g., 'gmail'
+            auth: {
+                user: 'your-email@gmail.com', // Replace with your email
+                pass: 'your-email-password'   // Replace with your email password
+            }
+        });
+
+        // Mail options
+        const mailOptions = {
+            from: email,
+            to: 'ventas@hexadesing.com', // Your receiving email
+            subject: subject,
+            text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+        };
+
+        // Send email
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return res.status(500).send('Error sending email: ' + error);
+            }
+            res.status(200).send('Email sent: ' + info.response);
+        });
+    });
+
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
     });
 </script>
 </body>
