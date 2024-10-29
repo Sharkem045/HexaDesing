@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Sets the viewport to make the website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Diseño y Prototipado">
     <title>HexaDesign</title>
     <style>
+        /* Basic styles for the entire document */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,6 +19,7 @@
             color: #333;
         }
 
+        /* Styles for the navigation bar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -29,6 +32,7 @@
             z-index: 1000;
         }
 
+        /* Styles for the links inside the navigation bar */
         .navbar a {
             color: #fff;
             text-decoration: none;
@@ -43,6 +47,36 @@
             color: #000;
         }
 
+        /* Styles for the hamburger menu button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 20px; /* Move hamburger button slightly to the right */
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Styles for the navbar menu items */
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .navbar-menu a {
+            display: inline-block;
+        }
+
+        /* Styles for the hero section */
         .hero {
             background-image: url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
             height: 100vh;
@@ -70,6 +104,7 @@
             margin-bottom: 40px;
         }
 
+        /* Styles for the about section */
         .about-section {
             display: flex;
             flex-direction: column;
@@ -105,12 +140,77 @@
             padding: 20px;
         }
 
+        /* Styles for the footer */
         footer {
             background-color: #000;
             color: #fff;
             text-align: center;
             padding: 20px 0;
             margin-top: 50px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #000;
+                position: absolute; /* Make the menu scrollable */
+                top: 100%;
+                left: 0; /* Make the menu cover the full width */
+                right: 0;
+            }
+
+            .navbar-menu a {
+                padding: 9px 0;
+                text-align: center;
+                border-top: 1px solid #fff;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active .bar1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active .bar2 {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 5px 10px;
+            }
+
+            .navbar a {
+                margin: 2px 0;
+                font-size: 0.8em;
+                padding: 5px 10px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -119,10 +219,15 @@
 <!-- Menú de navegación -->
 <div class="navbar">
     <a href="index.html" id="link-home">HexaDesign</a>
-    <div>
+    <div class="navbar-menu" id="navbar-menu">
         <a href="proyectos.html" id="link-proyectos">Proyectos</a>
         <a href="servicios.html" id="link-servicios">Servicios</a>
         <a href="contacto.html" id="link-contacto">Contacto</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
 </div>
 
@@ -149,5 +254,15 @@
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
+<!-- Script to handle the hamburger menu click event -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navbarMenu = document.getElementById('navbar-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+    });
+</script>
 </body>
 </html>
