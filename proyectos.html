@@ -47,7 +47,8 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            margin-left: auto; /* Move hamburger menu within the menu */
+            margin-left: auto;
+            margin-right: 10px; /* Move hamburger button slightly to the right */
         }
 
         .hamburger div {
@@ -171,6 +172,8 @@
                 flex-direction: column;
                 width: 100%;
                 background-color: #000;
+                position: absolute; /* Make the menu scrollable */
+                top: 100%;
             }
 
             .navbar-menu a {
