@@ -48,7 +48,7 @@
             flex-direction: column;
             cursor: pointer;
             margin-left: auto;
-            margin-right: 10px; /* Move hamburger button slightly to the right */
+            margin-right: 20px; /* Move hamburger button slightly to the right */
         }
 
         .hamburger div {
@@ -153,7 +153,7 @@
         }
 
         /* Responsiveness */
-        @media (max-width: 700px) {
+        @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3em;
             }
@@ -174,6 +174,8 @@
                 background-color: #000;
                 position: absolute; /* Make the menu scrollable */
                 top: 100%;
+                left: 0; /* Make the menu cover the full width */
+                right: 0;
             }
 
             .navbar-menu a {
