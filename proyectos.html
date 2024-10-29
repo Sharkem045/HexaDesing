@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Sets the viewport to make the website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HexaDesign - Proyectos">
     <title>Proyectos - HexaDesign</title>
     <style>
+        /* Basic styles for the entire document */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,6 +19,7 @@
             color: #333;
         }
 
+        /* Styles for the navigation bar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -29,6 +32,7 @@
             z-index: 1000;
         }
 
+        /* Styles for the links inside the navigation bar */
         .navbar a {
             color: #fff;
             text-decoration: none;
@@ -43,6 +47,7 @@
             color: #000;
         }
 
+        /* Styles for the hamburger menu button */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -59,6 +64,7 @@
             transition: 0.4s;
         }
 
+        /* Styles for the navbar menu items */
         .navbar-menu {
             display: flex;
             align-items: center;
@@ -70,6 +76,7 @@
             display: inline-block;
         }
 
+        /* Styles for the hero section */
         .hero {
             background-image: url('your-hero-image.jpg'); /* Replace with your image */
             height: 60vh;
@@ -93,6 +100,7 @@
             font-size: 1.5em;
         }
 
+        /* Styles for the gallery section */
         .gallery-section {
             padding: 60px 40px;
             background-color: #fff;
@@ -105,6 +113,7 @@
             text-align: center;
         }
 
+        /* Styles for the gallery items */
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -144,6 +153,7 @@
             text-align: center;
         }
 
+        /* Styles for the footer */
         footer {
             background-color: #000;
             color: #fff;
@@ -167,6 +177,7 @@
                 width: 90%;
             }
 
+            /* Adjusting navbar menu for smaller screens */
             .navbar-menu {
                 display: none;
                 flex-direction: column;
@@ -371,6 +382,7 @@
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
+<!-- Script to handle the hamburger menu click event -->
 <script>
     const hamburger = document.getElementById('hamburger');
     const navbarMenu = document.getElementById('navbar-menu');
