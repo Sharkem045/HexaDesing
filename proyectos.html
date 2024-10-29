@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hexadesign - Diseño y Prototipado">
-    <title>Hexadesign - Proyectos</title>
+    <meta name="description" content="HexaDesign - Servicios Ofrecidos">
+    <title>Servicios - HexaDesign</title>
     <style>
         body, html {
             margin: 0;
@@ -66,49 +66,52 @@
             font-size: 1.5em;
         }
 
-        .gallery-section {
-            padding: 50px 40px;
+        .services-section {
+            padding: 60px 40px;
             background-color: #fff;
         }
 
-        .gallery-section h2 {
+        .services-section h2 {
             font-size: 2.5em;
             color: #333;
             margin-bottom: 20px;
             text-align: center;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
         }
 
-        .gallery-item {
+        .service-item {
             background-color: #fff;
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .gallery-item img {
+        .service-item img {
             width: 100%;
             height: auto;
             object-fit: cover;
         }
 
-        .gallery-item:hover {
+        .service-item:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .gallery-item h3 {
+        .service-item h3 {
             color: #333;
             margin: 10px;
             text-align: center;
         }
 
-        .gallery-item p {
+        .service-item p {
             color: #666;
             padding: 0 15px;
             text-align: center;
@@ -121,13 +124,57 @@
             padding: 20px 0;
             margin-top: 50px;
         }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-item {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+                font-size: 0.9em;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .services {
+                gap: 20px;
+            }
+
+            .service-item {
+                width: 95%;
+            }
+        }
     </style>
 </head>
 <body>
 
 <!-- Menú de navegación -->
 <div class="navbar">
-    <a href="index.html" id="link-home">Hexadesign</a>
+    <a href="index.html" id="link-home">HexaDesign</a>
     <div>
         <a href="proyectos.html" id="link-proyectos">Proyectos</a>
         <a href="servicios.html" id="link-servicios">Servicios</a>
@@ -138,41 +185,32 @@
 <!-- Hero Section -->
 <div class="hero">
     <div>
-        <h1>Bienvenido a Hexadesign</h1>
-        <p>Explora nuestros proyectos innovadores</p>
+        <h1>Nuestros Servicios</h1>
+        <p>Explora los servicios que ofrecemos</p>
     </div>
 </div>
 
-<!-- Galería de Proyectos -->
-<div class="gallery-section">
-    <h2>Nuestros Proyectos</h2>
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Proyecto 1">
-            <h3>Proyecto 1</h3>
-            <p>Descripción del Proyecto 1</p>
+<!-- Sección de Servicios -->
+<div class="services-section">
+    <h2>Servicios Ofrecidos</h2>
+    <div class="services">
+        <div class="service-item">
+            <img src="https://via.placeholder.com/300" alt="Diseño de Prototipos">
+            <h3>Diseño de Prototipos</h3>
+            <p>Creación de prototipos funcionales para validar ideas y conceptos.</p>
         </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Proyecto 2">
-            <h3>Proyecto 2</h3>
-            <p>Descripción del Proyecto 2</p>
+        <div class="service-item">
+            <img src="https://via.placeholder.com/300" alt="Consultoría Técnica">
+            <h3>Consultoría Técnica</h3>
+            <p>Asesoramiento especializado en diseño mecánico y desarrollo de productos.</p>
         </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Proyecto 3">
-            <h3>Proyecto 3</h3>
-            <p>Descripción del Proyecto 3</p>
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/300" alt="Proyecto 4">
-            <h3>Proyecto 4</h3>
-            <p>Descripción del Proyecto 4</p>
-        </div>
+        <!-- Agregar más servicios según sea necesario -->
     </div>
 </div>
 
 <!-- Pie de página -->
 <footer>
-    <p>&copy; 2024 Hexadesign. Todos los derechos reservados.</p>
+    <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
 </body>
