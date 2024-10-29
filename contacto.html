@@ -169,7 +169,7 @@
             return;
         }
 
-        fetch('https://HexaDesign.com/ventas@HexaDesign.com', { // Updated endpoint
+        fetch('/send-email', { // Updated endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -198,9 +198,10 @@
             formMessage.style.color = 'red';
         });
     });
+</script>
 
-    // Embedded Node.js backend script (for demonstration purposes)
-    // In a real-world scenario, this should be a separate server file
+<!-- Node.js backend script -->
+<script>
     const express = require('express');
     const nodemailer = require('nodemailer');
     const bodyParser = require('body-parser');
@@ -217,7 +218,7 @@
         const transporter = nodemailer.createTransport({
             service: 'gmail', // e.g., 'gmail'
             auth: {
-                user: 'your-email@gmail.com', // Replace with your email
+                user: 'ventas@HexaDesign.com', // Replace with your email
                 pass: 'your-email-password'   // Replace with your email password
             }
         });
