@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hexadesign - Diseño y Prototipado">
+    <meta name="description" content="HexaDesign - Diseño y Prototipado">
     <title>HexaDesign</title>
     <style>
         /* Estilos generales */
@@ -15,24 +15,24 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
             box-sizing: border-box;
-            background-color: white; /* Fondo blanco */
-            color: black; /* Texto negro */
+            background-color: white;
+            color: black;
         }
 
-        /* Estilo para la portada principal */
+        /* Hero Section */
         .hero {
             background-image: url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
-            height: 100vh; /* Altura completa de la ventana */
-            background-size: cover; /* Cambiado a cover para cubrir toda el área */
+            height: 100vh;
+            background-size: cover;
             background-position: center;
-            background-repeat: no-repeat; /* Evitar que la imagen se repita */
+            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white; /* Texto blanco sobre fondo */
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente para mejor legibilidad */
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .hero h1 {
@@ -50,27 +50,29 @@
         /* Menú en la parte superior */
         .navbar {
             display: flex;
-            justify-content: space-between; /* Espacio entre el nombre y los enlaces */
+            justify-content: space-between;
             align-items: center;
-            background-color: #222; /* Fondo negro para el menú */
-            padding: 10px 20px; /* Padding para el menú */
-            position: relative;
+            background-color: #222;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
             z-index: 10;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 15px; /* Espaciado horizontal entre los botones */
-            font-size: 1.25em; /* Tamaño de letra aumentado */
-            padding: 8px 15px; /* Padding ajustado para botones */
-            border-radius: 5px; /* Esquinas redondeadas */
-            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+            margin: 0 15px;
+            font-size: 1.25em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: black; /* Negro al pasar el ratón */
-            color: white; /* Texto blanco al pasar el ratón */
+            background-color: black;
+            color: white;
         }
 
         /* Secciones ocultas al inicio */
@@ -86,7 +88,7 @@
 
         .section-title {
             font-size: 2.5em;
-            color: black; /* Texto negro para títulos de sección */
+            color: black;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
@@ -104,12 +106,12 @@
             max-width: 100%;
             border-radius: 10px;
             transition: transform 0.3s;
-            width: 300px; /* Ancho fijo para imágenes en computadoras */
-            height: auto; /* Mantener la relación de aspecto */
+            width: 300px;
+            height: auto;
         }
 
         .gallery img:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+            transform: scale(1.05);
         }
 
         /* Sección de servicios con tres columnas */
@@ -121,7 +123,7 @@
         }
 
         .service-item {
-            background-color: #f5f5f5; /* Fondo gris claro */
+            background-color: #f5f5f5;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -129,18 +131,18 @@
         }
 
         .service-item:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .service-item h3 {
             font-size: 1.5em;
-            color: black; /* Texto negro para títulos de servicio */
+            color: black;
             margin-bottom: 10px;
         }
 
         .service-item p {
             font-size: 1em;
-            color: #555; /* Texto gris oscuro */
+            color: #555;
             line-height: 1.5;
         }
 
@@ -148,162 +150,44 @@
         .about-section {
             display: flex;
             flex-direction: column;
-            margin-top: 50px; /* Separación de la sección anterior */
+            margin-top: 50px;
             padding: 20px;
         }
 
         .about-item {
             display: flex;
-            align-items: center; /* Centra el contenido verticalmente */
-            margin-bottom: 30px; /* Espaciado entre bloques */
+            align-items: center;
+            margin-bottom: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            overflow: hidden; /* Evitar que el contenido sobresalga */
+            overflow: hidden;
             transition: transform 0.3s;
-            width: 80%; /* Ajusta el ancho total */
-            margin: 0 auto; /* Centra los bloques */
+            width: 80%;
+            margin: 0 auto;
         }
 
         .about-item:hover {
-            transform: translateY(-5px); /* Levanta el bloque al pasar el ratón */
+            transform: translateY(-5px);
         }
 
         .about-item img {
-            width: 40%; /* Ancho del 40% para la imagen */
-            height: auto; /* Mantiene la relación de aspecto */
+            width: 40%;
+            height: auto;
         }
 
         .about-item div {
-            width: 60%; /* Ancho del 60% para el texto */
+            width: 60%;
             padding: 20px;
             text-align: left;
         }
 
         /* Estilos para el pie de página */
         footer {
-            background-color: #222; /* Fondo negro para el pie de página */
+            background-color: #222;
             color: white;
             text-align: center;
             padding: 20px 0;
             margin-top: 50px;
-        }
-
-        /* Estilos para el formulario de contacto */
-        #contactForm {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5; /* Fondo gris claro */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        #contactForm input, #contactForm textarea, #contactForm button {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-
-        #contactForm button {
-            background-color: #222;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #contactForm button:hover {
-            background-color: black;
-        }
-
-        /* Responsividad */
-        @media (max-width: 1200px) {
-            .services {
-                grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
-            }
-            .gallery img {
-                width: 100%; /* Ancho completo en pantallas pequeñas */
-                max-width: 400px; /* Max ancho en pantallas más grandes */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .services {
-                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-            }
-
-            .hero h1 {
-                font-size: 3em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
-            }
-
-            .hero p {
-                font-size: 1.2em; /* Ajuste de tamaño de fuente para pantallas pequeñas */
-            }
-
-            .navbar a {
-                padding: 6px 12px; /* Ajustar padding en móviles */
-                font-size: 1.5em; /* Ajustado para móviles */
-            }
-
-            .section-title {
-                font-size: 2em; /* Títulos más pequeños en móviles */
-            }
-
-            .service-item h3 {
-                font-size: 1.25em; /* Títulos más pequeños en móviles */
-            }
-
-            .service-item p {
-                font-size: 0.9em; /* Texto más pequeño en móviles */
-            }
-
-            .about-item img {
-                width: 50%; /* Ancho del 50% para móviles */
-            }
-
-            .about-item div {
-                width: 50%; /* Ancho del 50% para móviles */
-            }
-        }
-
-        /* Responsive Styles */
-        .resolucion {
-            width: 99%;
-            text-align: center;
-        }
-
-        /**Movil**/
-        @media (max-width: 767px) {
-            .desktop {
-                display: none;
-            }
-            .tablet {
-                display: none;
-            }
-        }
-
-        /**Tablet**/
-        @media (min-width: 768px) and (max-width: 990px) {
-            .desktop {
-                display: none;
-            }
-            .movil {
-                display: none;
-            }
-        }
-
-        /**Escritorio**/
-        @media (min-width: 991px) {
-            .tablet {
-                display: none;
-            }
-            .movil {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -311,23 +195,35 @@
 
 <!-- Menú de navegación -->
 <div class="navbar">
-    <a href="index.html">Hexadesign</a>
+    <a href="index.html" id="link-home">HexaDesign</a>
     <div>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="proyectos.html" id="link-proyectos">Proyectos</a>
+        <a href="servicios.html" id="link-servicios">Servicios</a>
+        <a href="contacto.html" id="link-contacto">Contacto</a>
     </div>
 </div>
 
-<!-- Portada Principal -->
+<!-- Hero Section -->
 <div class="hero">
-    <h1>Hexadesign</h1>
-    <p>Explora nuestros servicios y proyectos de diseño</p>
+    <h1>Bienvenido a HexaDesign</h1>
+    <p>Diseño y Prototipado de Alta Calidad</p>
+</div>
+
+<!-- Nueva Sección Sobre la Empresa -->
+<div class="about-section">
+    <h2 class="section-title">Sobre Nosotros</h2>
+    <div class="about-item">
+        <img src="https://via.placeholder.com/400" alt="Sobre Nosotros">
+        <div>
+            <h3>HexaDesign</h3>
+            <p>En HexaDesign, nos especializamos en crear prototipos funcionales y ofrecer servicios de consultoría técnica para desarrollar productos innovadores.</p>
+        </div>
+    </div>
 </div>
 
 <!-- Pie de página -->
 <footer>
-    <p>&copy; 2024 Hexadesign. Todos los derechos reservados.</p>
+    <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
 </body>
