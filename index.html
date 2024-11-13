@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HexaDesign - Innovación en Diseño y Prototipado">
+    <meta name="description" content="HexaDesign - Diseño y Prototipado">
     <title>HexaDesign</title>
     <style>
         /* Basic styles for the entire document */
@@ -12,11 +12,10 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             overflow-x: hidden;
-            background-color: #111;
-            color: #f1f1f1;
-            scroll-behavior: smooth;
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         /* Styles for the navigation bar */
@@ -24,346 +23,237 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 15px 40px;
+            background-color: #000;
+            padding: 20px 40px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #444;
         }
 
+        /* Styles for the links inside the navigation bar */
         .navbar a {
-            color: #f1f1f1;
+            color: #fff;
             text-decoration: none;
-            margin: 0 20px;
+            margin: 0 15px;
             font-size: 1em;
-            padding: 8px 15px;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .navbar a:hover {
-            color: #00d1ff;
+            background-color: #fff;
+            color: #000;
         }
 
+        /* Styles for the hamburger menu button */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
+            margin-left: auto;
+            margin-right: 20px; /* Move hamburger button slightly to the right */
         }
 
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #f1f1f1;
+            background-color: #fff;
             margin: 4px 0;
-            transition: 0.3s;
+            transition: 0.4s;
         }
 
-        /* Hero Section */
+        /* Styles for the navbar menu items */
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .navbar-menu a {
+            display: inline-block;
+        }
+
+        /* Styles for the hero section */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1500');
+            background-image: url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
             height: 100vh;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #00d1ff;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .hero h1 {
             font-size: 4em;
-            margin: 0;
-            letter-spacing: 1px;
+            margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .hero p {
             font-size: 1.5em;
-            margin: 20px 0 40px;
-            color: #f1f1f1;
+            margin-bottom: 40px;
         }
 
-        .btn-primary {
-            padding: 15px 30px;
-            background-color: #00d1ff;
-            color: #111;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        /* Styles for the about section */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .btn-primary:hover {
-            background-color: #00a3c8;
-        }
-
-        /* Section: About Us */
-        .section {
-            padding: 80px 20px;
-            background-color: #222;
-            color: #f1f1f1;
-            text-align: center;
-        }
-
-        .section h2 {
+        .about-section h2 {
             font-size: 2.5em;
+            color: #333;
             margin-bottom: 20px;
-            color: #00d1ff;
         }
 
-        .section-content {
-            max-width: 1200px;
-            margin: auto;
+        .about-item {
             display: flex;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 30px;
         }
 
-        .section-content img {
+        .about-item img {
             width: 40%;
+            height: auto;
+            margin-right: 20px;
             border-radius: 10px;
         }
 
-        .section-content div {
-            width: 50%;
+        .about-item div {
+            width: 60%;
             padding: 20px;
         }
 
-        /* Section: Services */
-        .services {
-            background-color: #111;
-            padding: 60px 20px;
-        }
-
-        .service-item {
-            width: 30%;
-            text-align: center;
-            margin: 10px;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .service-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 209, 255, 0.5);
-        }
-
-        /* Section: Projects */
-        .projects {
-            background-color: #222;
-            padding: 80px 20px;
-        }
-
-        .project-item {
-            margin: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .project-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Contact Form */
-        .contact {
-            padding: 80px 20px;
-            background-color: #333;
-        }
-
-        .contact form {
-            max-width: 600px;
-            margin: auto;
-        }
-
-        .contact input, .contact textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            border: 1px solid #444;
-            background-color: #222;
-            color: #f1f1f1;
-            border-radius: 5px;
-        }
-
-        .contact button {
-            padding: 15px 30px;
-            background-color: #00d1ff;
-            color: #111;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .contact button:hover {
-            background-color: #00a3c8;
-        }
-
-        /* Footer */
+        /* Styles for the footer */
         footer {
             background-color: #000;
-            color: #f1f1f1;
+            color: #fff;
             text-align: center;
-            padding: 20px;
-            border-top: 1px solid #444;
+            padding: 20px 0;
+            margin-top: 50px;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
-        /* Responsive styling */
-        @media (max-width: 768px) {
-            .navbar a {
-                margin: 0 10px;
-                font-size: 0.9em;
-            }
-
+        /* Responsiveness */
+        @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3em;
             }
 
-            .section-content {
+            .navbar-menu {
+                display: none;
                 flex-direction: column;
+                width: 100%;
+                background-color: #000;
+                position: absolute; /* Make the menu scrollable */
+                top: 100%;
+                left: 0; /* Make the menu cover the full width */
+                right: 0;
             }
 
-            .services, .projects, .service-item, .project-item {
-                width: 100%;
-                padding: 0;
-            }
-
-            .section-content img, .section-content div {
-                width: 100%;
+            .navbar-menu a {
+                padding: 9px 0;
+                text-align: center;
+                border-top: 1px solid #fff;
             }
 
             .hamburger {
                 display: flex;
             }
 
-            .navbar-menu {
-                display: none;
-                flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.9);
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
+            .hamburger.active .bar1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active .bar2 {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar3 {
+                transform: rotate(45deg) translate(-5px, -6px);
             }
 
             .navbar-menu.active {
                 display: flex;
             }
         }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 5px 10px;
+            }
+
+            .navbar a {
+                margin: 2px 0; /* Reduce margin between links */
+                font-size: 0.8em;
+                padding: 5px 10px; /* Reduce padding for smaller screens */
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
+<!-- Menú de navegación -->
 <div class="navbar">
-    <a href="#home">HexaDesign</a>
+    <a href="index.html" id="link-home">HexaDesign</a>
     <div class="navbar-menu" id="navbar-menu">
-        <a href="#about">Sobre Nosotros</a>
-        <a href="#services">Servicios</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#contact">Contacto</a>
+        <a href="proyectos.html" id="link-proyectos">Proyectos</a>
+        <a href="servicios.html" id="link-servicios">Servicios</a>
+        <a href="contacto.html" id="link-contacto">Contacto</a>
     </div>
     <div class="hamburger" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
 </div>
 
 <!-- Hero Section -->
-<div class="hero" id="home">
-    <h1>HexaDesign</h1>
-    <p>Innovación en Diseño y Prototipado</p>
-    <button class="btn-primary">Explorar</button>
+<div class="hero">
+    <h1>Bienvenido a HexaDesign</h1>
+    <p>Diseño y Prototipado de Alta Calidad</p>
 </div>
 
-<!-- About Section -->
-<div class="section" id="about">
+<!-- Nueva Sección Sobre la Empresa -->
+<div class="about-section">
     <h2>Sobre Nosotros</h2>
-    <div class="section-content">
-        <img src="https://via.placeholder.com/400" alt="Sobre Nosotros" loading="lazy">
+    <div class="about-item">
+        <img src="https://via.placeholder.com/400" alt="Sobre Nosotros">
         <div>
-            <p>HexaDesign es una empresa dedicada a la creación de prototipos y al desarrollo de soluciones de diseño innovadoras. Con una metodología enfocada en precisión y tecnología de punta, ayudamos a nuestros clientes a transformar ideas en realidad.</p>
+            <h3>HexaDesign</h3>
+            <p>En HexaDesign, nos especializamos en crear prototipos funcionales y ofrecer servicios de consultoría técnica para desarrollar productos innovadores.</p>
         </div>
     </div>
 </div>
 
-<!-- Services Section -->
-<div class="services" id="services">
-    <h2>Servicios</h2>
-    <div class="section-content">
-        <div class="service-item">
-            <h3>Diseño 3D</h3>
-            <p>Creación de modelos tridimensionales precisos para proyectos avanzados.</p>
-        </div>
-        <div class="service-item">
-            <h3>Prototipado Rápido</h3>
-            <p>Implementación de prototipos funcionales para pruebas y desarrollo.</p>
-        </div>
-        <div class="service-item">
-            <h3>Consultoría Técnica</h3>
-            <p>Asesoría para el desarrollo de productos industriales innovadores.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Projects Section -->
-<div class="projects" id="projects">
-    <h2>Proyectos Destacados</h2>
-    <div class="section-content">
-        <div class="project-item">
-            <img src="https://via.placeholder.com/400" alt="Proyecto 1">
-            <p>Proyecto de diseño estructural para aeronáutica.</p>
-        </div>
-        <div class="project-item">
-            <img src="https://via.placeholder.com/400" alt="Proyecto 2">
-            <p>Implementación de prototipos en automoción.</p>
-        </div>
-        <div class="project-item">
-            <img src="https://via.placeholder.com/400" alt="Proyecto 3">
-            <p>Desarrollo de piezas para maquinaria avanzada.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Contact Section -->
-<div class="contact" id="contact">
-    <h2>Contáctanos</h2>
-    <form>
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo Electrónico" required>
-        <textarea placeholder="Mensaje" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-</div>
-
-<!-- Footer -->
+<!-- Pie de página -->
 <footer>
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
-<!-- Script for Hamburger Menu -->
+<!-- Script to handle the hamburger menu click event -->
 <script>
     const hamburger = document.getElementById('hamburger');
     const navbarMenu = document.getElementById('navbar-menu');
