@@ -16,6 +16,7 @@
             overflow-x: hidden;
             background-color: #f5f5f5;
             color: #333;
+            scroll-behavior: smooth;
         }
 
         /* Styles for the navigation bar */
@@ -52,7 +53,7 @@
             flex-direction: column;
             cursor: pointer;
             margin-left: auto;
-            margin-right: 20px; /* Move hamburger button slightly to the right */
+            margin-right: 20px;
         }
 
         .hamburger div {
@@ -60,7 +61,7 @@
             height: 3px;
             background-color: #fff;
             margin: 4px 0;
-            transition: 0.4s;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         /* Styles for the navbar menu items */
@@ -75,9 +76,9 @@
             display: inline-block;
         }
 
-        /* Styles for the hero section */
+        /* Styles for the hero section with overlay */
         .hero {
-            background-image: url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://github.com/user-attachments/assets/5014e164-921a-4d77-aadc-3026a0497046');
             height: 100vh;
             background-size: cover;
             background-position: center;
@@ -88,7 +89,6 @@
             justify-content: center;
             text-align: center;
             color: #fff;
-            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .hero h1 {
@@ -103,7 +103,7 @@
             margin-bottom: 40px;
         }
 
-        /* Styles for the about section */
+        /* Styles for the about section with animation */
         .about-section {
             display: flex;
             flex-direction: column;
@@ -125,6 +125,14 @@
             margin-bottom: 30px;
             border-bottom: 1px solid #ddd;
             padding-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .about-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .about-item img {
@@ -159,9 +167,9 @@
                 flex-direction: column;
                 width: 100%;
                 background-color: #000;
-                position: absolute; /* Make the menu scrollable */
+                position: absolute;
                 top: 100%;
-                left: 0; /* Make the menu cover the full width */
+                left: 0;
                 right: 0;
             }
 
@@ -198,9 +206,9 @@
             }
 
             .navbar a {
-                margin: 2px 0; /* Reduce margin between links */
+                margin: 2px 0;
                 font-size: 0.8em;
-                padding: 5px 10px; /* Reduce padding for smaller screens */
+                padding: 5px 10px;
             }
 
             .hero h1 {
@@ -240,7 +248,7 @@
 <div class="about-section">
     <h2>Sobre Nosotros</h2>
     <div class="about-item">
-        <img src="https://via.placeholder.com/400" alt="Sobre Nosotros">
+        <img src="https://via.placeholder.com/400" alt="Sobre Nosotros" loading="lazy">
         <div>
             <h3>HexaDesign</h3>
             <p>En HexaDesign, nos especializamos en crear prototipos funcionales y ofrecer servicios de consultoría técnica para desarrollar productos innovadores.</p>
@@ -253,8 +261,9 @@
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
-<!-- Script to handle the hamburger menu click event -->
+<!-- Script to handle the hamburger menu click event and about section animations -->
 <script>
+    // Toggle hamburger menu
     const hamburger = document.getElementById('hamburger');
     const navbarMenu = document.getElementById('navbar-menu');
 
@@ -262,6 +271,17 @@
         hamburger.classList.toggle('active');
         navbarMenu.classList.toggle('active');
     });
+
+    // Animate about section items on scroll
+    const aboutItems = document.querySelectorAll('.about-item');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+    aboutItems.forEach(item => observer.observe(item));
 </script>
 </body>
 </html>
