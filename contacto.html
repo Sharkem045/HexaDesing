@@ -12,61 +12,53 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-            box-sizing: border-box;
-            background-color: white; /* Fondo blanco */
-            color: black; /* Texto negro */
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
         }
 
-        /* Menú en la parte superior */
         .navbar {
             display: flex;
-            justify-content: space-between; /* Espacio entre el nombre y los enlaces */
+            justify-content: space-between;
             align-items: center;
-            background-color: #222; /* Fondo negro para el menú */
-            padding: 10px 20px; /* Padding para el menú */
-            position: relative;
-            z-index: 10;
+            background-color: #222;
+            padding: 15px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
         }
 
         .navbar a {
-            color: white;
+            color: #f1f1f1;
             text-decoration: none;
-            margin: 0 15px; /* Espaciado horizontal entre los botones */
-            font-size: 1.25em; /* Tamaño de letra aumentado */
-            padding: 8px 15px; /* Padding ajustado para botones */
-            border-radius: 5px; /* Esquinas redondeadas */
-            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+            margin: 0 15px;
+            padding: 10px;
+            transition: color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: black; /* Negro al pasar el ratón */
-            color: white; /* Texto blanco al pasar el ratón */
+            color: #00d1ff;
         }
 
-        /* Sección de Contacto */
         .section {
-            padding: 50px;
+            padding: 80px 20px;
+            margin-top: 80px;
             text-align: center;
         }
 
-        .section-title {
+        .section h2 {
             font-size: 2.5em;
-            color: black; /* Texto negro para títulos de sección */
             margin-bottom: 20px;
-            text-transform: uppercase;
+            color: #222;
         }
 
-        /* Formulario de contacto en cuadrícula */
         .contact-form {
             display: grid;
-            grid-template-columns: 1fr;
             gap: 20px;
             max-width: 600px;
-            margin: 0 auto;
+            margin: auto;
             padding: 20px;
-            background-color: #f5f5f5; /* Fondo gris claro */
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -76,51 +68,30 @@
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 1em;
         }
 
         .contact-form button {
             background-color: #222;
-            color: white;
-            border: none;
+            color: #f1f1f1;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
         .contact-form button:hover {
-            background-color: black;
+            background-color: #00a3c8;
         }
 
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
-            resize: vertical; /* Allow textarea to be resized vertically */
-        }
-
-        /* Estilos para el pie de página */
         footer {
-            background-color: #222; /* Fondo negro para el pie de página */
-            color: white;
+            background-color: #222;
+            color: #f1f1f1;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2em; /* Títulos más pequeños en móviles */
-            }
-
-            .navbar a {
-                padding: 6px 12px; /* Ajustar padding en móviles */
-                font-size: 1.5em; /* Ajustado para móviles */
-            }
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
+
 <!-- Menú de navegación -->
 <div class="navbar">
     <a href="index.html">HexaDesign</a>
@@ -132,17 +103,16 @@
 </div>
 
 <!-- Sección de Contacto -->
-<div id="contacto" class="section">
-    <h2 class="section-title">Contacto</h2>
-    <form id="contactForm" class="contact-form" novalidate>
-        <input type="text" id="name" name="name" placeholder="Nombre" required>
-        <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-        <input type="text" id="phone" name="phone" placeholder="Teléfono" required>
-        <input type="text" id="subject" name="subject" placeholder="Asunto" required>
-        <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+<div class="section">
+    <h2>Contáctanos</h2>
+    <form class="contact-form" action="/send-email" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo Electrónico" required>
+        <input type="text" name="phone" placeholder="Teléfono" required>
+        <input type="text" name="subject" placeholder="Asunto" required>
+        <textarea name="message" placeholder="Mensaje" rows="4" required></textarea>
         <button type="submit">Enviar</button>
     </form>
-    <div id="formMessage" style="display: none;"></div>
 </div>
 
 <!-- Pie de página -->
@@ -150,99 +120,5 @@
     <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
 </footer>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        const formMessage = document.getElementById('formMessage');
-
-        // Simple form validation
-        if (!name || !email || !phone || !subject || !message) {
-            formMessage.style.display = 'block';
-            formMessage.innerText = 'Por favor, complete todos los campos.';
-            formMessage.style.color = 'red';
-            return;
-        }
-
-        fetch('/send-email', { // Updated endpoint
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                phone: phone,
-                subject: subject,
-                message: message
-            })
-        }).then(response => {
-            if (response.ok) {
-                formMessage.style.display = 'block';
-                formMessage.innerText = '¡Correo enviado exitosamente!';
-                formMessage.style.color = 'green';
-            } else {
-                formMessage.style.display = 'block';
-                formMessage.innerText = 'Hubo un error al enviar el correo.';
-                formMessage.style.color = 'red';
-            }
-        }).catch(error => {
-            console.error('Error:', error);
-            formMessage.style.display = 'block';
-            formMessage.innerText = 'Hubo un error al enviar el correo.';
-            formMessage.style.color = 'red';
-        });
-    });
-</script>
-
-<!-- Node.js backend script -->
-<script>
-    const express = require('express');
-    const nodemailer = require('nodemailer');
-    const bodyParser = require('body-parser');
-
-    const app = express();
-    const port = process.env.PORT || 3000;
-
-    app.use(bodyParser.json());
-
-    app.post('/send-email', (req, res) => {
-        const { name, email, phone, subject, message } = req.body;
-
-        // Create a transporter object
-        const transporter = nodemailer.createTransport({
-            service: 'gmail', // e.g., 'gmail'
-            auth: {
-                user: 'ventas@HexaDesign.com', // Replace with your email
-                pass: 'your-email-password'   // Replace with your email password
-            }
-        });
-
-        // Mail options
-        const mailOptions = {
-            from: email,
-            to: 'ventas@HexaDesign.com', // Your receiving email
-            subject: subject,
-            text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-        };
-
-        // Send email
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return res.status(500).send('Error sending email: ' + error);
-            }
-            res.status(200).send('Email sent: ' + info.response);
-        });
-    });
-
-    app.listen(port, () => {
-        console.log(`Server running on port ${port}`);
-    });
-</script>
 </body>
 </html>
