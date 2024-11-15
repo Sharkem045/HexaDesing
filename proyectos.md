@@ -1,7 +1,0 @@
-![fotopri md](https://github.com/user-attachments/assets/c9303230-ea58-4211-b206-9f8cbf030e9a)
-![WhatsApp Image 2024-10-14 at 11 36 51 PM (1)](https://github.com/user-attachments/assets/a3967823-5c02-4906-9a27-1587334687de)
-![WhatsApp Image 2024-10-14 at 11 36 51 PM (2)](https://github.com/user-attachments/assets/9675f66e-28dc-4703-b3d0-bb0c8b41affe)
-![WhatsApp Image 2024-10-14 at 11 36 52 PM (1)](https://github.com/user-attachments/assets/4d729854-0704-42be-aad4-1b06855432b5)
-![WhatsApp Image 2024-10-14 at 11 36 52 PM (2)](https://github.com/user-attachments/assets/7e3eb93c-0545-4082-97e0-cb8a3736c62d)
-![Wha![WhatsApp Image 2024-10-14 at 11 36 52 PM](https://github.com/user-attachments/assets/313c2cd3-22b6-4234-8665-ed0c60d31c12)
-tsApp Image 2024-10-14 at 11 36 52 PM (3)](https://github.com/user-attachments/assets/be8cb351-4c93-489d-b758-4572c4497677)
