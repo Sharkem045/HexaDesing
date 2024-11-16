@@ -49,34 +49,49 @@ nav a:hover {
     transform: scale(1.15);
 }
 
-
 /* Styles for the hero section */
 .hero {
-    background-image: url("assets/cinta-transportadora.jpeg");
-    height: 100vh;
+    position: relative;
+    background-image: url('assets/engranajes.jpeg'); 
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
+    background-position: center; 
+    max-height: 100vh;
+    height: 100vh; 
+    display: flex; 
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    color: white; 
     text-align: center;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
 }
 
 .hero h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 8rem;
+    margin-bottom: 0;
+    margin-top: -50px;
+}
+.hero p {
+    font-size: 3rem;
 }
 
+.hero h1,
 .hero p {
-    font-size: 1.5em;
-    margin-bottom: 40px;
+    position: relative; 
+    z-index: 2; 
 }
+
 
 /* Styles for the about section */
 .about-section {
