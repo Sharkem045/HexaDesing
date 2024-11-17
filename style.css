@@ -98,19 +98,19 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     color: white;
+    padding: 40px;
 }
 
 #about-section h2 {
     font-size: 3.5rem;
     font-weight: bolder;
-    margin-bottom: 0;
+    margin-bottom: 30px;
 }
 
 #about-item {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 40px;
 }
 
 
