@@ -7,7 +7,7 @@ html {
     height: 100%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     overflow-x: hidden;
-    background-color: #18222c;
+    background-color: rgb(220, 218, 218);
     color: #333;
 }
 
@@ -97,36 +97,59 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    padding: 40px;
 }
 
 #about-section h2 {
     font-size: 3.5rem;
     font-weight: bolder;
-    margin-bottom: 0;
+    margin: 0;
+    margin-bottom: 30px;
 }
 
 #about-item {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 40px;
 }
-
 
 #about-item div {
     width: 40%;
+    display: flex;
+    flex-direction: column;
 }
 #about-item img {
     border-radius: 100%;
+    max-width: 30%;
 }
 
 #about-item h3 {
     font-size: 2.5rem;
+    width: fit-content;
+    padding-bottom: 3px;
+    border-bottom: 5px solid #000;
 }
 #about-item p {
     font-size: 1.5rem;
     font-weight: 100;
+}
+
+/* Styles for contact button */
+#contact-button {
+    font-size: 1.5rem;
+    align-self: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border: none;
+}
+#contact-button:hover {
+    background-color: rgb(255, 84, 84);
+}
+#contact-button:active {
+    background-color: rgb(204, 0, 0);
 }
 
 /* Styles for the footer */
