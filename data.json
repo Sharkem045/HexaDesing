@@ -1,10 +1,39 @@
 {
-    "projectos": [
+    "project": [
         {
-            
+            "name": "Motor Rotativo",
+            "desc": "Tipo de motor de combustión interna en el que los cilindros están dispuestos en un patrón circular alrededor de un cigüeñal central",
+            "use": "Aviones de helice Central"
         },
         {
-
+            "name":"Freno ATV",
+            "desc":"Sistema de frenado",
+            "use":"Vehículos todo terreno"
+        },
+        {
+            "name":"Transportador de banda inclinado",
+            "desc":"Equipo utilizado para mover materiales de un punto a otro",
+            "use":"Industrias de manufactura, minería, reciclaje, y procesamiento de alimentos"
+        },
+        {
+            "name":"Sistema de motor y reductor de velocidad",
+            "desc":"Utilizado para impulsar maquinaria industrial",
+            "use":"Industrias de manufactura"
+        },
+        {
+            "name":"Transportador de banda horizontal",
+            "desc":"Utilizado para mover materiales a lo largo de una distancia en una línea horizontal o con inclinación leve",
+            "use":"Industria alimentaria, almcenes y logística, industria manufactura"
+        },
+        {
+            "name":"Sistema de bombeo",
+            "desc":"Utilizado en plantas de tratamiento de agua",
+            "use":"Industria de abastecimiento de agua potable, agricultura, industria petroquímica"
+        },
+        {
+            "name":"Gripper",
+            "desc":"Dispositivo diseñado para sujetar, agarrar y manipular objetos",
+            "use":"Sistemas de automatización, robótica industrial"
         }
     ]
 }
