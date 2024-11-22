@@ -12,7 +12,7 @@
     
     <header>
         <nav>
-            <a href="index.html" id="link-home">HexaDesign</a>
+            <a href="index.html" id="link-home">Inicio</a>
             <a href="proyectos.html" id="link-proyectos">Proyectos</a>
             <div id="logo-container" onclick="window.location.href='index.html';">
                 <img src="/assets/logo.png" alt="logo" onclick="">
@@ -41,13 +41,22 @@
     </section>
 
     <section id="projects">
-        <div class="container">
-            <div class="slide">
-                <img src="assets/works/project1.jpeg">
-                <h3>Sample Title</h3>
-                <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem ducimus reprehenderit </p>
-                <p>Usos</p>
-                <p>Industria Explamentaria, Industria Inventadororia</p>
+        <div class="slider-container" id="slider">
+            <h2>Diseño y prototipado de modelos</h2>
+            <div class="slider-content">
+                <div id="content">
+                    <h3 id="slider-title">Sample Title</h3>
+                    <p id="slider-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem ducimus reprehenderit </p>
+                    <h4>Usos</h4>
+                    <p id="slider-uses">Industria Explamentaria, Industria Inventadororia</p>
+                </div>
+                <div class="img-container">
+                    <img id="slider-image" src="assets/works/project1.jpeg">
+                </div>
+            </div>
+            <div id="controls">
+                <div class="arrow" id="prev" title="Previous Slide"><img src="assets/arrow-left-svgrepo-com.svg"></div>
+                <div class="arrow" id="next" title="Next Slide"><img src="assets/arrow-right-svgrepo-com.svg"></div>
             </div>
         </div>
     </section>
@@ -56,5 +65,6 @@
     <footer>
         <p>&copy; 2024 HexaDesign. Todos los derechos reservados.</p>
     </footer>
+    <script src="index.js" type="module"></script>
     </body>
     </html>

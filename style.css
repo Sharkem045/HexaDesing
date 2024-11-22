@@ -137,19 +137,121 @@ nav a:hover {
 /* Styles for contact button */
 #contact-button {
     font-size: 1.5rem;
-    align-self: center;
+    align-self: flex-end;
     border-radius: 10px;
     padding: 10px;
     font-weight: bold;
-    background-color: red;
+    background-color: rgb(70, 70, 70);
     color: white;
     border: none;
+    transition: background-color .3s ease-in-out;
+    cursor: pointer;
 }
 #contact-button:hover {
-    background-color: rgb(255, 84, 84);
+    background-color: rgb(100, 100, 100);
 }
 #contact-button:active {
-    background-color: rgb(204, 0, 0);
+    background-color: rgb(40, 40, 40);
+}
+
+/* Styles of the slider */
+.slider-container {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+}
+.slider-container h2 {
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 10px 10px 0 10px;
+    padding: 10px;
+    border-bottom: 3px black solid; 
+}
+
+.slider-content {
+    position: relative;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    color: rgb(31, 37, 45);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.slider-content.show {
+    opacity: 1;
+}
+#content {
+    width: 40%;
+    height: 100%;
+}
+#slider-title {
+    font-size: 3.5rem;
+    margin: 0;
+}
+#slider-description, #slider-uses {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+#content h4 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+.img-container {
+    position: relative;
+    display: flex;
+    width:40%;
+    height: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.img-container img {
+    position: absolute;
+    width: 500px;
+    right: 0;
+    top: -60px;
+}
+
+/* Style for slides control */
+#controls {
+    border-top: 3px black solid;
+    height: 65px;
+    position: relative;
+    width: 100%;
+    
+}
+#controls :nth-child(1){
+    left: 30px;
+    top: 10px;
+}
+#prev:hover{
+    transform: translate3d(-6px, 0, 0);
+}
+#controls :nth-child(2){
+    right: 30px;
+    top: 10px;
+}
+#next:hover {
+    transform: translate3d(6px, 0, 0);
+}
+.arrow {
+    transition: .3s ease-in transform;
+    position: absolute;
+    cursor: pointer;
+}
+.arrow img {
+    width: 50px;
 }
 
 /* Styles for the footer */
